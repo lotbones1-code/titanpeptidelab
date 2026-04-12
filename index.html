@@ -1116,8 +1116,9 @@ footer {
             
             <h3 style="font-size:1.125rem;font-weight:700;margin:32px 0 20px">Shipping Address</h3>
             <div class="form-group">
-              <label class="form-label">Country <span class="required">*</span></label>
+              <label class="form-label">Country / Region <span class="required">*</span></label>
               <select class="form-select" name="country" id="coCountry" onchange="updateFormForCountry()" required>
+                <option value="" selected disabled>Select country / region</option>
                 <option value="US">United States</option>
                 <option value="CA">Canada</option>
                 <option value="GB">United Kingdom</option>
@@ -1159,10 +1160,15 @@ footer {
                 <option value="ZA">South Africa</option>
                 <option value="OTHER">Other</option>
               </select>
+              <div style="margin-top:8px;font-size:0.875rem;color:var(--gray-500)">Worldwide orders supported. Select your country first so labels update correctly for your region.</div>
             </div>
             <div class="form-group">
               <label class="form-label">Street Address <span class="required">*</span></label>
-              <input type="text" class="form-input" name="address" required placeholder="123 Main Street">
+              <input type="text" class="form-input" name="address" required placeholder="Street address, building, suite">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Address Line 2 <span style="color:var(--gray-500);font-weight:400">(optional)</span></label>
+              <input type="text" class="form-input" name="address2" placeholder="Apartment, unit, company, customs note">
             </div>
             <div class="form-row">
               <div class="form-group">
@@ -1195,7 +1201,7 @@ footer {
                   </div>
                   <div>
                     <div class="payment-method-title">Cryptocurrency</div>
-                    <div class="payment-method-desc">BTC, ETH, USDC, SOL + 300+ coins</div>
+                    <div class="payment-method-desc">ETH / USDC (ERC20) / SOL / USDC (Solana). Verification-first payment lane.</div>
                   </div>
                 </div>
               </div>
@@ -1209,7 +1215,7 @@ footer {
                   </div>
                   <div>
                     <div class="payment-method-title">Bank Transfer</div>
-                    <div class="payment-method-desc">ACH, Wire, or SEPA</div>
+                    <div class="payment-method-desc">ACH, wire, or SEPA for serious wholesale / higher-ticket buyers</div>
                   </div>
                 </div>
               </div>
@@ -1217,15 +1223,7 @@ footer {
             
             <!-- Crypto Addresses -->
             <div class="crypto-addresses" id="cryptoAddresses">
-              <div class="crypto-address-title">Send payment to one of these addresses:</div>
-              <div class="crypto-address">
-                <div class="crypto-address-icon btc">₿</div>
-                <div class="crypto-address-details">
-                  <div class="crypto-address-label">Bitcoin (BTC)</div>
-                  <div class="crypto-address-value" id="btcAddress">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</div>
-                </div>
-                <button type="button" class="btn-copy" onclick="copyAddress(this, 'btcAddress')">Copy</button>
-              </div>
+              <div class="crypto-address-title">Use one of these payment lanes after submitting your order:</div>
               <div class="crypto-address">
                 <div class="crypto-address-icon eth">Ξ</div>
                 <div class="crypto-address-details">
@@ -1246,21 +1244,30 @@ footer {
                 <div class="crypto-address-icon sol">◎</div>
                 <div class="crypto-address-details">
                   <div class="crypto-address-label">Solana (SOL)</div>
-                  <div class="crypto-address-value" id="solAddress">J6pA5k7ccsX2U8WvaLi8zuagKJVq2a2fLaAdzVgSnQB6</div>
+                  <div class="crypto-address-value" id="solAddress">DEHeTxWAhXhmPBMYr5orRXDMMF1vUZ8E2vjB4CHowLQM</div>
                 </div>
                 <button type="button" class="btn-copy" onclick="copyAddress(this, 'solAddress')">Copy</button>
               </div>
+              <div class="crypto-address">
+                <div class="crypto-address-icon usdc">$</div>
+                <div class="crypto-address-details">
+                  <div class="crypto-address-label">USDC (Solana)</div>
+                  <div class="crypto-address-value" id="usdcSolAddress">DEHeTxWAhXhmPBMYr5orRXDMMF1vUZ8E2vjB4CHowLQM</div>
+                </div>
+                <button type="button" class="btn-copy" onclick="copyAddress(this, 'usdcSolAddress')">Copy</button>
+              </div>
+              <div style="margin-top:12px;font-size:0.875rem;color:var(--gray-500)">Need BTC or another network? Submit the order first and request a custom payment lane with your order ID.</div>
             </div>
             
             <!-- Bank Details -->
             <div class="crypto-addresses" id="bankDetails" style="display:none">
-              <div class="crypto-address-title">Bank transfer details will be sent to your email after order confirmation.</div>
+              <div class="crypto-address-title">Bank transfer details are shared after order review. Best for larger or wholesale orders.</div>
             </div>
             
             <input type="hidden" name="payment_method" id="paymentMethod" value="crypto">
             <input type="hidden" name="order_data" id="orderData">
             
-            <button type="submit" class="btn-checkout" style="margin-top:24px" id="submitBtn">Complete Order</button>
+            <button type="submit" class="btn-checkout" style="margin-top:24px" id="submitBtn">Submit Order & Get Payment Instructions</button>
           </form>
         </div>
         
@@ -1564,7 +1571,7 @@ function submitOrder(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
-  btn.textContent = 'Processing...';
+  btn.textContent = 'Preparing order...';
   
   const form = document.getElementById('checkoutForm');
   const formData = new FormData(form);
@@ -1580,7 +1587,7 @@ function submitOrder(e) {
     payment_method: paymentMethod === 'crypto' ? 'Cryptocurrency' : 'Bank Transfer',
     name: formData.get('name'),
     email: formData.get('email'),
-    address: `${formData.get('address')}, ${formData.get('city')}, ${formData.get('state')} ${formData.get('zip')}`,
+    address: `${formData.get('address')}${formData.get('address2') ? ', ' + formData.get('address2') : ''}, ${formData.get('city')}, ${formData.get('state')} ${formData.get('zip')}, ${formData.get('country')}`,
     phone: formData.get('phone') || 'N/A',
     items: orderData.items.map(i => `${i.name} (${i.dosage}) x${i.qty}`).join(', '),
     total: `$${orderData.total.toFixed(2)}`
@@ -1605,8 +1612,8 @@ function submitOrder(e) {
         <p>Order ID: <span class="order-id">${orderId}</span></p>
         <p>Confirmation sent to <strong>${formData.get('email')}</strong></p>
         ${paymentMethod === 'crypto' ? `
-          <p style="margin-top:16px">Please send payment to one of the crypto addresses shown.</p>
-          <p style="font-size:0.875rem;color:var(--gray-500)">Include your Order ID in the transaction memo.</p>
+          <p style="margin-top:16px">Use the crypto payment lane shown below and keep your order ID attached to the payment.</p>
+          <p style="font-size:0.875rem;color:var(--gray-500)">If you need another coin or network, reply to the confirmation email with your order ID and requested payment method.</p>
         ` : `
           <p style="margin-top:16px">Bank transfer details have been sent to your email.</p>
         `}
