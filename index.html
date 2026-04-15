@@ -16,20 +16,20 @@ a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
 :root{
-  --ink:#07070A;
-  --ink-1:#0F0F14;
-  --ink-2:#17171D;
-  --ink-3:#222229;
-  --paper:#F6F5F0;
-  --paper-2:#EDEAE3;
-  --fg:#F8F7F4;
-  --fg-2:#9898A6;
-  --fg-3:#5E5E6E;
-  --gold:#C49A4E;
-  --gold-lt:#DDB96A;
-  --gold-dk:#9E7A38;
-  --gold-dim:rgba(196,154,78,.10);
-  --gold-glow:rgba(196,154,78,.22);
+  --ink:#08142A;
+  --ink-1:#0D1B38;
+  --ink-2:#142444;
+  --ink-3:#1B2E54;
+  --paper:#F4F7FC;
+  --paper-2:#E4EDF8;
+  --fg:#EDF2FF;
+  --fg-2:#7A9EC9;
+  --fg-3:#476A97;
+  --gold:#00B4D8;
+  --gold-lt:#48CAE4;
+  --gold-dk:#0096B4;
+  --gold-dim:rgba(0,180,216,.10);
+  --gold-glow:rgba(0,180,216,.22);
   --green:#22C55E;
   --red:#EF4444;
   --b-dark:rgba(255,255,255,.07);
@@ -51,16 +51,16 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--ink);color:var(--
 [data-reveal][data-d="4"]{transition-delay:.4s}
 
 /* ── Announcement ── */
-.ann{background:var(--gold);color:#07070A;text-align:center;padding:9px 16px;font-size:.8125rem;font-weight:600;letter-spacing:.025em}
+.ann{background:var(--gold);color:#fff;text-align:center;padding:9px 16px;font-size:.8125rem;font-weight:600;letter-spacing:.025em}
 
 /* ── Header ── */
 header{position:sticky;top:0;z-index:100;background:rgba(7,7,10,.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--b-dark)}
 .hd{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
 .logo{display:flex;align-items:center;gap:10px}
-.logo-mark{width:34px;height:34px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.logo-mark svg{width:18px;height:18px}
-.logo-name{font-family:'Instrument Serif',serif;font-size:1.125rem;letter-spacing:-.01em}
-.logo-name em{font-style:italic;color:var(--gold)}
+.logo-mark{width:34px;height:34px;border-radius:8px;overflow:hidden;flex-shrink:0}
+.logo-mark img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.logo-name{font-family:'Inter',system-ui,sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--fg)}
+.logo-name em{font-style:normal;color:var(--gold)}
 nav{display:flex;gap:32px}
 nav a{font-size:.875rem;font-weight:500;color:var(--fg-2);letter-spacing:.01em;transition:color .2s}
 nav a:hover{color:var(--fg)}
@@ -84,19 +84,19 @@ nav a:hover{color:var(--fg)}
   opacity:.035}
 /* orbs */
 .orb{position:absolute;border-radius:50%;filter:blur(110px);will-change:transform}
-.orb-1{width:640px;height:640px;background:radial-gradient(circle,rgba(196,154,78,.14),transparent 65%);top:-150px;right:-100px;animation:orb1 14s ease-in-out infinite}
-.orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(80,140,255,.07),transparent 65%);bottom:-100px;left:-80px;animation:orb2 18s ease-in-out infinite}
-.orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(196,154,78,.08),transparent 65%);top:40%;left:40%;animation:orb1 22s ease-in-out infinite reverse}
+.orb-1{width:640px;height:640px;background:radial-gradient(circle,rgba(0,180,216,.15),transparent 65%);top:-150px;right:-100px;animation:orb1 14s ease-in-out infinite}
+.orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(20,100,220,.10),transparent 65%);bottom:-100px;left:-80px;animation:orb2 18s ease-in-out infinite}
+.orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(0,150,200,.08),transparent 65%);top:40%;left:40%;animation:orb1 22s ease-in-out infinite reverse}
 @keyframes orb1{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-30px)}66%{transform:translate(-25px,35px)}}
 @keyframes orb2{0%,100%{transform:translate(0,0)}33%{transform:translate(-35px,25px)}66%{transform:translate(30px,-20px)}}
 .hero .c{position:relative;z-index:2;display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:center}
 .hero-eye{display:inline-flex;align-items:center;gap:10px;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
 .hero-eye::before{content:'';width:28px;height:1px;background:var(--gold)}
 .hero-h1{font-family:'Instrument Serif',serif;font-size:clamp(3.25rem,7.5vw,8.5rem);line-height:.95;letter-spacing:-.03em;margin-bottom:28px}
-.hero-h1 em{font-style:italic;background:linear-gradient(135deg,#DDB96A 0%,#C49A4E 50%,#9E7A38 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-h1 em{font-style:italic;background:linear-gradient(135deg,#48CAE4 0%,#00B4D8 50%,#0077B6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:1.0625rem;color:var(--fg-2);line-height:1.75;max-width:500px;margin-bottom:40px;font-weight:300}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
-.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#07070A;padding:14px 28px;border-radius:8px;font-size:.9375rem;font-weight:600;border:none;cursor:pointer;transition:all .2s;letter-spacing:-.01em}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;padding:14px 28px;border-radius:8px;font-size:.9375rem;font-weight:600;border:none;cursor:pointer;transition:all .2s;letter-spacing:-.01em}
 .btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 32px var(--gold-glow)}
 .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--fg-2);padding:14px 28px;border-radius:8px;font-size:.9375rem;font-weight:500;border:1px solid var(--b-mid);cursor:pointer;transition:all .2s}
 .btn-ghost:hover{border-color:var(--b-mid);color:var(--fg);background:var(--ink-2)}
@@ -134,7 +134,7 @@ nav a:hover{color:var(--fg)}
 .pills{display:flex;gap:8px;flex-wrap:wrap}
 .pill{padding:7px 18px;border-radius:100px;font-size:.8125rem;font-weight:600;border:1.5px solid var(--b-lt);background:transparent;color:#666;cursor:pointer;transition:all .2s}
 .pill:hover{border-color:#999;color:#111}
-.pill.on{background:#07070A;border-color:#07070A;color:#fff}
+.pill.on{background:var(--ink);border-color:var(--ink);color:#fff}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
 .pc{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:var(--r-lg);overflow:hidden;transition:all .3s;cursor:default}
 .pc:hover{transform:translateY(-4px);box-shadow:0 16px 56px rgba(0,0,0,.1),0 0 0 2px var(--gold-glow)}
@@ -149,8 +149,8 @@ nav a:hover{color:var(--fg)}
 .pc-desc{font-size:.8125rem;color:#555;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:16px}
 .pc-ft{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid rgba(0,0,0,.07)}
 .pc-price{font-family:'Instrument Serif',serif;font-size:1.625rem;color:#07070A}
-.btn-add{padding:9px 20px;background:#07070A;color:#fff;border:none;border-radius:8px;font-size:.8125rem;font-weight:600;cursor:pointer;transition:all .2s}
-.btn-add:hover{background:var(--gold-dk)}
+.btn-add{padding:9px 20px;background:var(--ink);color:#fff;border:none;border-radius:8px;font-size:.8125rem;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-add:hover{background:var(--gold-dk);color:#fff}
 
 /* ── Quality (DARK) ── */
 .quality{background:var(--ink);padding:96px 0;border-bottom:1px solid var(--b-dark)}
@@ -194,8 +194,8 @@ nav a:hover{color:var(--fg)}
 
 /* ── CTA ── */
 .cta-sec{padding:0;overflow:hidden}
-.cta-inner{background:linear-gradient(135deg,#0A0906 0%,#1A1308 40%,#231A0A 100%);border-top:1px solid var(--b-dark);padding:96px 0;position:relative;overflow:hidden}
-.cta-inner::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(196,154,78,.12),transparent 65%);pointer-events:none}
+.cta-inner{background:linear-gradient(135deg,#060E1E 0%,#0C1C36 40%,#112244 100%);border-top:1px solid var(--b-dark);padding:96px 0;position:relative;overflow:hidden}
+.cta-inner::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(0,180,216,.13),transparent 65%);pointer-events:none}
 .cta-inner .c{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:48px}
 .cta-h{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.025em;color:var(--fg);margin-bottom:14px}
 .cta-h em{font-style:italic;color:var(--gold)}
@@ -360,12 +360,8 @@ footer{background:var(--ink);border-top:1px solid var(--b-dark);padding:64px 0 0
 <header>
   <div class="c hd">
     <a href="#" class="logo">
-      <div class="logo-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#07070A" stroke-width="2.5" stroke-linecap="round">
-          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-        </svg>
-      </div>
-      <span class="logo-name serif">Titan Peptide <em>Lab</em></span>
+      <div class="logo-mark"><img src="titan-icon.png" alt="Titan Peptide Lab"></div>
+      <span class="logo-name">TITAN <em>PEPTIDE</em> LAB</span>
     </a>
     <nav>
       <a href="#products">Products</a>
@@ -594,7 +590,7 @@ footer{background:var(--ink);border-top:1px solid var(--b-dark);padding:64px 0 0
   <div class="c">
     <div class="fg">
       <div class="fb">
-        <a href="#" class="logo"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#07070A" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><span class="logo-name serif">Titan Peptide <em>Lab</em></span></a>
+        <a href="#" class="logo"><div class="logo-mark"><img src="titan-icon.png" alt="Titan Peptide Lab"></div><span class="logo-name">TITAN <em>PEPTIDE</em> LAB</span></a>
         <p>Premium research-grade peptides with independently verified purity. Advancing scientific discovery through uncompromising quality.</p>
       </div>
       <div class="fc"><h5>Catalog</h5><ul><li><a href="#products">Lyophilized Peptides</a></li><li><a href="#products">Liquid Formulations</a></li><li><a href="#products">Nasal Sprays</a></li></ul></div>
