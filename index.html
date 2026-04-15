@@ -6,6 +6,8 @@
 <title>Titan Peptide Lab — Research-Grade Compounds</title>
 <meta name="description" content="Research-grade peptides independently verified to 99%+ purity. HPLC tested, Certificate of Analysis with every order. Worldwide shipping.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -49,12 +51,17 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--ink);color:var(--
 [data-reveal][data-d="2"]{transition-delay:.2s}
 [data-reveal][data-d="3"]{transition-delay:.3s}
 [data-reveal][data-d="4"]{transition-delay:.4s}
+@media(prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  .orb,.ticker-t,.purity-dot{animation:none!important}
+  *{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
 
 /* ── Announcement ── */
-.ann{background:var(--gold);color:#fff;text-align:center;padding:9px 16px;font-size:.8125rem;font-weight:600;letter-spacing:.025em}
+.ann{background:linear-gradient(90deg,var(--gold-dk),var(--gold),var(--gold-dk));color:#fff;text-align:center;padding:10px 16px;font-size:.8125rem;font-weight:600;letter-spacing:.03em}
 
 /* ── Header ── */
-header{position:sticky;top:0;z-index:100;background:rgba(7,7,10,.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--b-dark)}
+header{position:sticky;top:0;z-index:100;background:rgba(8,20,42,.88);backdrop-filter:blur(24px) saturate(1.6);border-bottom:1px solid var(--b-dark)}
 .hd{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
 .logo{display:flex;align-items:center;gap:10px}
 .logo-mark{width:34px;height:34px;border-radius:8px;overflow:hidden;flex-shrink:0}
@@ -62,11 +69,14 @@ header{position:sticky;top:0;z-index:100;background:rgba(7,7,10,.82);backdrop-fi
 .logo-name{font-family:'Inter',system-ui,sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--fg)}
 .logo-name em{font-style:normal;color:var(--gold)}
 nav{display:flex;gap:32px}
-nav a{font-size:.875rem;font-weight:500;color:var(--fg-2);letter-spacing:.01em;transition:color .2s}
+nav a{font-size:.875rem;font-weight:500;color:var(--fg-2);letter-spacing:.01em;transition:color .2s;position:relative;padding-bottom:2px}
+nav a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--gold);transition:width .25s}
 nav a:hover{color:var(--fg)}
+nav a:hover::after{width:100%}
 .hd-right{display:flex;align-items:center;gap:10px}
-.cart-btn{position:relative;width:38px;height:38px;border-radius:8px;border:1px solid var(--b-mid);background:var(--ink-2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--fg-2);transition:all .2s}
-.cart-btn:hover{border-color:var(--b-mid);color:var(--fg)}
+.cart-btn{position:relative;width:38px;height:38px;border-radius:8px;border:1px solid var(--b-mid);background:var(--ink-2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--fg-2);transition:color .2s,border-color .2s,background .2s}
+.cart-btn:hover{border-color:var(--gold);color:var(--fg)}
+.cart-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .cart-btn svg{width:17px;height:17px}
 .cart-count{position:absolute;top:-5px;right:-5px;width:17px;height:17px;background:var(--gold);color:#07070A;font-size:.5625rem;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .cart-count.hidden{display:none}
@@ -78,10 +88,15 @@ nav a:hover{color:var(--fg)}
 
 /* ── Hero ── */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:100px 0 80px}
-/* grain overlay */
+/* dot grid */
 .hero::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity:.035}
+  background-image:radial-gradient(circle,rgba(122,158,201,.18) 1px,transparent 1px);
+  background-size:28px 28px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 30%,transparent 100%)}
+/* grain layer */
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.028}
 /* orbs */
 .orb{position:absolute;border-radius:50%;filter:blur(110px);will-change:transform}
 .orb-1{width:640px;height:640px;background:radial-gradient(circle,rgba(0,180,216,.15),transparent 65%);top:-150px;right:-100px;animation:orb1 14s ease-in-out infinite}
@@ -92,22 +107,25 @@ nav a:hover{color:var(--fg)}
 .hero .c{position:relative;z-index:2;display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:center}
 .hero-eye{display:inline-flex;align-items:center;gap:10px;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
 .hero-eye::before{content:'';width:28px;height:1px;background:var(--gold)}
-.hero-h1{font-family:'Instrument Serif',serif;font-size:clamp(3.25rem,7.5vw,8.5rem);line-height:.95;letter-spacing:-.03em;margin-bottom:28px}
+.hero-h1{font-family:'Instrument Serif',serif;font-size:clamp(3.5rem,8vw,9.5rem);line-height:.92;letter-spacing:-.035em;margin-bottom:28px;text-wrap:balance}
 .hero-h1 em{font-style:italic;background:linear-gradient(135deg,#48CAE4 0%,#00B4D8 50%,#0077B6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:1.0625rem;color:var(--fg-2);line-height:1.75;max-width:500px;margin-bottom:40px;font-weight:300}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
-.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;padding:14px 28px;border-radius:8px;font-size:.9375rem;font-weight:600;border:none;cursor:pointer;transition:all .2s;letter-spacing:-.01em}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;padding:14px 28px;border-radius:8px;font-size:.9375rem;font-weight:600;border:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;letter-spacing:-.01em}
 .btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 32px var(--gold-glow)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--fg-2);padding:14px 28px;border-radius:8px;font-size:.9375rem;font-weight:500;border:1px solid var(--b-mid);cursor:pointer;transition:all .2s}
-.btn-ghost:hover{border-color:var(--b-mid);color:var(--fg);background:var(--ink-2)}
-.hero-proof{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--b-dark);border-radius:var(--r-lg);overflow:hidden}
-.hp{padding:18px 16px;border-right:1px solid var(--b-dark);text-align:center}
+.btn-gold:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--fg-2);padding:14px 28px;border-radius:8px;font-size:.9375rem;font-weight:500;border:1px solid var(--b-mid);cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.btn-ghost:hover{border-color:rgba(0,180,216,.4);color:var(--fg);background:var(--ink-2)}
+.btn-ghost:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hero-proof{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--b-dark);border-radius:var(--r-lg);overflow:hidden;background:rgba(13,27,56,.5);backdrop-filter:blur(12px)}
+.hp{padding:20px 16px;border-right:1px solid var(--b-dark);text-align:center;transition:background .2s}
+.hp:hover{background:rgba(0,180,216,.06)}
 .hp:last-child{border-right:none}
-.hp-v{font-family:'Instrument Serif',serif;font-size:1.75rem;color:var(--fg);display:block;line-height:1.1}
-.hp-l{font-size:.625rem;color:var(--fg-3);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:3px;display:block}
+.hp-v{font-family:'Instrument Serif',serif;font-size:1.875rem;color:var(--fg);display:block;line-height:1.1}
+.hp-l{font-size:.625rem;color:var(--fg-3);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:4px;display:block}
 /* hero product panel */
-.hero-panel{background:var(--ink-2);border:1px solid var(--b-mid);border-radius:var(--r-xl);padding:40px 28px 32px;text-align:center;position:relative;overflow:hidden}
-.hero-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:100px;background:linear-gradient(180deg,var(--gold-dim),transparent);pointer-events:none}
+.hero-panel{background:linear-gradient(160deg,var(--ink-2),var(--ink-1));border:1px solid rgba(0,180,216,.25);border-radius:var(--r-xl);padding:40px 28px 32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(0,180,216,.08),0 32px 80px rgba(0,0,0,.4)}
+.hero-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:120px;background:linear-gradient(180deg,rgba(0,180,216,.12),transparent);pointer-events:none}
 .hero-panel img{max-height:200px;object-fit:contain;margin:0 auto 24px;position:relative;z-index:1;filter:drop-shadow(0 20px 40px rgba(0,0,0,.7))}
 .hp-name{font-family:'Instrument Serif',serif;font-size:1.5rem;margin-bottom:6px}
 .hp-batch{font-size:.6875rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px}
@@ -127,7 +145,7 @@ nav a:hover{color:var(--fg)}
 .products{background:var(--paper);padding:96px 0;border-bottom:4px solid var(--ink)}
 .sec-eye{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:16px}
 .sec-eye::before{content:'';width:22px;height:1px;background:var(--gold-dk)}
-.sec-h{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.08;letter-spacing:-.025em;color:#07070A;margin-bottom:14px}
+.sec-h{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,3.25rem);line-height:1.06;letter-spacing:-.025em;color:#07070A;margin-bottom:14px;text-wrap:balance}
 .sec-h em{font-style:italic;color:var(--gold-dk)}
 .sec-p{font-size:.9375rem;color:#555;line-height:1.7;font-weight:300}
 .ph{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;gap:24px}
@@ -136,8 +154,10 @@ nav a:hover{color:var(--fg)}
 .pill:hover{border-color:#999;color:#111}
 .pill.on{background:var(--ink);border-color:var(--ink);color:#fff}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.pc{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:var(--r-lg);overflow:hidden;transition:all .3s;cursor:default}
-.pc:hover{transform:translateY(-4px);box-shadow:0 16px 56px rgba(0,0,0,.1),0 0 0 2px var(--gold-glow)}
+.pc{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:var(--r-lg);overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s;cursor:default;position:relative}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold));opacity:0;transition:opacity .3s}
+.pc:hover{transform:translateY(-5px);box-shadow:0 20px 64px rgba(0,0,0,.13),0 0 0 1px rgba(0,180,216,.2)}
+.pc:hover::before{opacity:1}
 .pc-img{height:196px;background:var(--paper-2);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid rgba(0,0,0,.05)}
 .pc-img img{max-height:150px;max-width:75%;object-fit:contain;filter:drop-shadow(0 6px 20px rgba(0,0,0,.15));transition:transform .4s}
 .pc:hover .pc-img img{transform:scale(1.05)}
@@ -172,17 +192,18 @@ nav a:hover{color:var(--fg)}
 /* ── Numbers (LIGHT) ── */
 .numbers{background:var(--paper);padding:80px 0;border-bottom:4px solid var(--ink)}
 .n-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid rgba(0,0,0,.1);border-radius:var(--r-lg);overflow:hidden}
-.n-item{padding:36px 28px;border-right:1.5px solid rgba(0,0,0,.1);text-align:center}
+.n-item{padding:40px 28px;border-right:1.5px solid rgba(0,0,0,.1);text-align:center;position:relative;overflow:hidden;transition:background .2s}
 .n-item:last-child{border-right:none}
-.n-val{font-family:'Instrument Serif',serif;font-size:3.5rem;color:#07070A;line-height:1;display:block}
-.n-lbl{font-size:.75rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#777;margin-top:6px;display:block}
-.n-desc{font-size:.8125rem;color:#555;margin-top:8px;line-height:1.5}
+.n-item:hover{background:rgba(0,150,180,.04)}
+.n-val{font-family:'Instrument Serif',serif;font-size:3.75rem;color:#07070A;line-height:1;display:block;letter-spacing:-.02em}
+.n-lbl{font-size:.75rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#777;margin-top:7px;display:block}
+.n-desc{font-size:.8125rem;color:#555;margin-top:9px;line-height:1.55}
 
 /* ── Reviews (DARK) ── */
 .reviews{background:var(--ink-1);padding:88px 0;border-bottom:1px solid var(--b-dark)}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
-.rev{background:var(--ink-2);border:1px solid var(--b-dark);border-radius:var(--r-lg);padding:28px;transition:border-color .2s}
-.rev:hover{border-color:var(--b-mid)}
+.rev{background:var(--ink-2);border:1px solid var(--b-dark);border-radius:var(--r-lg);padding:28px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.rev:hover{border-color:rgba(0,180,216,.25);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
 .stars{display:flex;gap:3px;margin-bottom:16px}
 .stars svg{width:13px;height:13px;fill:var(--gold);color:var(--gold)}
 .rev-q{font-family:'Instrument Serif',serif;font-size:1.0625rem;font-style:italic;color:var(--fg);line-height:1.65;margin-bottom:22px}
@@ -360,7 +381,7 @@ footer{background:var(--ink);border-top:1px solid var(--b-dark);padding:64px 0 0
 <header>
   <div class="c hd">
     <a href="#" class="logo">
-      <div class="logo-mark"><img src="titan-icon.png" alt="Titan Peptide Lab"></div>
+      <div class="logo-mark"><img src="titan-icon.png" alt="Titan Peptide Lab" width="34" height="34"></div>
       <span class="logo-name">TITAN <em>PEPTIDE</em> LAB</span>
     </a>
     <nav>
@@ -590,7 +611,7 @@ footer{background:var(--ink);border-top:1px solid var(--b-dark);padding:64px 0 0
   <div class="c">
     <div class="fg">
       <div class="fb">
-        <a href="#" class="logo"><div class="logo-mark"><img src="titan-icon.png" alt="Titan Peptide Lab"></div><span class="logo-name">TITAN <em>PEPTIDE</em> LAB</span></a>
+        <a href="#" class="logo"><div class="logo-mark"><img src="titan-icon.png" alt="Titan Peptide Lab" width="34" height="34"></div><span class="logo-name">TITAN <em>PEPTIDE</em> LAB</span></a>
         <p>Premium research-grade peptides with independently verified purity. Advancing scientific discovery through uncompromising quality.</p>
       </div>
       <div class="fc"><h5>Catalog</h5><ul><li><a href="#products">Lyophilized Peptides</a></li><li><a href="#products">Liquid Formulations</a></li><li><a href="#products">Nasal Sprays</a></li></ul></div>
@@ -625,8 +646,8 @@ footer{background:var(--ink);border-top:1px solid var(--b-dark);padding:64px 0 0
         <div>
           <form id="checkoutForm" onsubmit="submitOrder(event)">
             <div class="fg-sec">Contact Information</div>
-            <div class="fg-g"><label class="fg-l">Email <span class="req">*</span></label><input type="email" class="fg-i" name="email" required placeholder="your@email.com"></div>
-            <div class="fg-g"><label class="fg-l">Full Name <span class="req">*</span></label><input type="text" class="fg-i" name="name" required placeholder="John Doe"></div>
+            <div class="fg-g"><label class="fg-l" for="co-email">Email <span class="req">*</span></label><input type="email" class="fg-i" id="co-email" name="email" required placeholder="your@email.com" autocomplete="email"></div>
+            <div class="fg-g"><label class="fg-l" for="co-name">Full Name <span class="req">*</span></label><input type="text" class="fg-i" id="co-name" name="name" required placeholder="John Doe" autocomplete="name"></div>
             <div class="fg-sec">Shipping Address</div>
             <div class="fg-g">
               <label class="fg-l">Country / Region <span class="req">*</span></label>
@@ -636,8 +657,8 @@ footer{background:var(--ink);border-top:1px solid var(--b-dark);padding:64px 0 0
               </select>
               <div style="margin-top:6px;font-size:.8125rem;color:var(--fg-3)">Select your country so labels update for your region.</div>
             </div>
-            <div class="fg-g"><label class="fg-l">Street Address <span class="req">*</span></label><input type="text" class="fg-i" name="address" required placeholder="Street address, building, suite"></div>
-            <div class="fg-g"><label class="fg-l">Address Line 2 <span style="color:var(--fg-3);font-weight:400">(optional)</span></label><input type="text" class="fg-i" name="address2" placeholder="Apartment, unit, customs note"></div>
+            <div class="fg-g"><label class="fg-l" for="co-address">Street Address <span class="req">*</span></label><input type="text" class="fg-i" id="co-address" name="address" required placeholder="Street address, building, suite" autocomplete="address-line1"></div>
+            <div class="fg-g"><label class="fg-l" for="co-address2">Address Line 2 <span style="color:var(--fg-3);font-weight:400">(optional)</span></label><input type="text" class="fg-i" id="co-address2" name="address2" placeholder="Apartment, unit, customs note" autocomplete="address-line2"></div>
             <div class="fg-row">
               <div class="fg-g"><label class="fg-l" id="coCityLabel">City <span class="req">*</span></label><input type="text" class="fg-i" name="city" required></div>
               <div class="fg-g"><label class="fg-l" id="coStateLabel">State/Province <span class="req">*</span></label><input type="text" class="fg-i" name="state" id="coState" required></div>
