@@ -1,923 +1,897 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titan Peptide Lab | Premium Research-Grade Peptides</title>
-    <meta name="description" content="Research-grade peptides with independent third-party verification. HPLC and mass spectrometry tested. Batch-specific COAs included with every order.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #005587;
-            --primary-dark: #003d5c;
-            --accent: #0092d0;
-            --text: #1a1a1a;
-            --text-light: #5a5a5a;
-            --bg-light: #f5f7f9;
-            --white: #ffffff;
-            --border: #e0e4e8;
-            --success: #1a7f3c;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* Top bar */
-        .top-bar {
-            background: var(--primary-dark);
-            color: var(--white);
-            padding: 8px 0;
-            font-size: 13px;
-        }
-
-        .top-bar-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-bar-left {
-            display: flex;
-            gap: 24px;
-        }
-
-        .top-bar-left span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .top-bar-right {
-            display: flex;
-            gap: 20px;
-        }
-
-        .top-bar a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.9;
-        }
-
-        .top-bar a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        /* Header */
-        header {
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 16px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-name {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: -0.5px;
-        }
-
-        .logo-tagline {
-            font-size: 11px;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            gap: 32px;
-        }
-
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            padding: 8px 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .search-box {
-            position: relative;
-        }
-
-        .search-box input {
-            width: 280px;
-            padding: 10px 16px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 14px;
-            background: var(--bg-light);
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .cart-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-            background: var(--primary);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .cart-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 80px 40px;
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            max-width: 700px;
-        }
-
-        .hero h1 strong {
-            font-weight: 700;
-        }
-
-        .hero-subtitle {
-            font-size: 20px;
-            opacity: 0.9;
-            margin-bottom: 32px;
-            max-width: 600px;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 48px;
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .hero-stat {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hero-stat-number {
-            font-size: 36px;
-            font-weight: 700;
-        }
-
-        .hero-stat-label {
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        /* Trust bar */
-        .trust-bar {
-            background: var(--bg-light);
-            padding: 16px 40px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .trust-bar-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            font-size: 13px;
-            color: var(--text-light);
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .trust-item strong {
-            color: var(--success);
-            font-weight: 600;
-        }
-
-        /* Products section */
-        .products {
-            padding: 80px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 300;
-            margin-bottom: 12px;
-        }
-
-        .section-header h2 strong {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            font-size: 18px;
-        }
-
-        /* Category tabs */
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-
-        .category-tab {
-            padding: 12px 24px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .category-tab.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
-        .category-tab:hover:not(.active) {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* Product grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: box-shadow 0.2s;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .product-image {
-            height: 200px;
-            background: var(--bg-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            padding: 4px 10px;
-            background: var(--accent);
-            color: var(--white);
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            border-radius: 4px;
-        }
-
-        .product-badge.popular {
-            background: var(--primary);
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-type {
-            font-size: 11px;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-
-        .product-name {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .product-size {
-            font-size: 14px;
-            color: var(--text-light);
-            margin-bottom: 12px;
-        }
-
-        .product-purity {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 10px;
-            background: rgba(26, 127, 60, 0.1);
-            color: var(--success);
-            font-size: 12px;
-            font-weight: 600;
-            border-radius: 4px;
-            margin-bottom: 16px;
-        }
-
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
-        }
-
-        .product-price {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .product-stock {
-            font-size: 13px;
-            color: var(--success);
-            font-weight: 500;
-        }
-
-        .add-to-cart {
-            padding: 10px 20px;
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .add-to-cart:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Quality section */
-        .quality {
-            background: var(--bg-light);
-            padding: 80px 40px;
-        }
-
-        .quality-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .quality-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .quality-card {
-            background: var(--white);
-            padding: 32px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
-        .quality-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(0, 85, 135, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .quality-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .quality-card p {
-            color: var(--text-light);
-            font-size: 15px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: var(--white);
-            padding: 60px 40px 30px;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-        }
-
-        .footer-brand {
-            max-width: 300px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 16px;
-        }
-
-        .footer-brand .logo-icon {
-            background: var(--accent);
-        }
-
-        .footer-brand p {
-            font-size: 14px;
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-
-        .footer-column h4 {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        .footer-column a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 40px auto 0;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            justify-content: space-between;
-            font-size: 13px;
-            opacity: 0.7;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .header-content {
-                flex-wrap: wrap;
-            }
-
-            nav {
-                order: 3;
-                width: 100%;
-                margin-top: 16px;
-                justify-content: center;
-            }
-
-            .quality-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 24px;
-            }
-
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titan Peptide Lab — Research-Grade Compounds</title>
+<meta name="description" content="Research-grade peptides independently verified to 99%+ purity. HPLC tested, Certificate of Analysis with every order. Worldwide shipping.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Titan Peptide Lab","description":"Research-grade peptides independently verified to 99%+ purity","url":"https://titanpeptidelab.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What purity standard do your peptides meet?","acceptedAnswer":{"@type":"Answer","text":"All peptides are independently verified to ≥99% purity via HPLC and confirmed by mass spectrometry. Every batch undergoes endotoxin testing. A Certificate of Analysis with batch-specific results is included with every order."}},{"@type":"Question","name":"Do you ship internationally?","acceptedAnswer":{"@type":"Answer","text":"Yes. We ship to 160+ countries with customs-compliant, discreet packaging. International orders typically arrive in 5-10 business days. Free shipping on orders over $150 domestic."}},{"@type":"Question","name":"What payment methods do you accept?","acceptedAnswer":{"@type":"Answer","text":"We accept Bitcoin, Ethereum, USDC (ERC-20 and Solana), and Solana. Bank/wire transfer is available for wholesale or institutional orders."}},{"@type":"Question","name":"How should I store the peptides after delivery?","acceptedAnswer":{"@type":"Answer","text":"Lyophilized peptides should be stored at -20°C for long-term storage or 2-8°C for short-term. Reconstituted peptides should be refrigerated and used within 30 days."}},{"@type":"Question","name":"Are these peptides for human consumption?","acceptedAnswer":{"@type":"Answer","text":"No. All products are sold strictly for in-vitro research and laboratory use only. Not intended for human or animal consumption."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+img{display:block;max-width:100%}
+button,input,select,textarea{font-family:inherit;font-size:inherit}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;outline:none}
+
+:root{
+  --bg:#030712;
+  --bg1:#060e1f;
+  --bg2:#0a1628;
+  --bg3:#0f1e35;
+  --card:#0d1a2e;
+  --card2:#111f38;
+  --border:rgba(255,255,255,.06);
+  --border2:rgba(255,255,255,.10);
+  --cyan:#06b6d4;
+  --cyan-dk:#0891b2;
+  --cyan-glow:rgba(6,182,212,.14);
+  --cyan-dim:rgba(6,182,212,.06);
+  --green:#22c55e;
+  --red:#ef4444;
+  --amber:#f59e0b;
+  --fg:#f0f6ff;
+  --fg2:#8ba9cc;
+  --fg3:#4d6a8a;
+  --r:12px;--rl:20px;--rxl:28px;
+  --shadow:0 32px 80px rgba(0,0,0,.45),0 8px 24px rgba(0,0,0,.25);
+}
+
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.serif{font-family:'Playfair Display',Georgia,serif}
+.c{max-width:1280px;margin:0 auto;padding:0 28px}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+[data-reveal].on{opacity:1;transform:none}
+[data-reveal][data-d="1"]{transition-delay:.1s}
+[data-reveal][data-d="2"]{transition-delay:.2s}
+[data-reveal][data-d="3"]{transition-delay:.3s}
+[data-reveal][data-d="4"]{transition-delay:.4s}
+[data-reveal][data-d="5"]{transition-delay:.5s}
+[data-reveal][data-d="6"]{transition-delay:.6s}
+
+.mol-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.mol-bg svg{position:absolute;opacity:.04;width:100%;height:100%}
+
+/* ANNOUNCEMENT */
+.ann{background:var(--cyan);color:var(--bg);font-size:.78125rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:.6rem 1rem;position:relative;z-index:200}
+.ann span{opacity:.65;margin:0 .5rem}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:150;background:rgba(3,7,18,.88);backdrop-filter:blur(32px) saturate(1.8);border-bottom:1px solid var(--border);height:68px;display:flex;align-items:center}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.logo{display:flex;align-items:center;gap:12px;color:var(--fg)}
+.logo-mark{width:38px;height:38px;border-radius:10px;background:var(--cyan);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.logo-mark img{width:100%;height:100%;object-fit:cover}
+.logo-text{font-size:.9375rem;font-weight:800;letter-spacing:.05em}
+.logo-text em{font-style:normal;color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--fg2);transition:color .2s}
+.nav-links a:hover{color:var(--fg)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.cart-btn{position:relative;width:42px;height:42px;border-radius:var(--r);border:1px solid var(--border2);background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--fg2);transition:all .2s}
+.cart-btn:hover{border-color:var(--cyan);color:var(--fg)}
+.cart-btn svg{width:18px;height:18px}
+.cart-count{position:absolute;top:-5px;right:-5px;width:18px;height:18px;background:var(--cyan);color:var(--bg);font-size:.5625rem;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg)}
+.cart-count.hidden{display:none}
+.btn-order{display:inline-flex;align-items:center;gap:8px;background:var(--cyan);color:var(--bg);padding:.65rem 1.25rem;border-radius:var(--r);font-size:.875rem;font-weight:700;transition:all .2s;white-space:nowrap}
+.btn-order:hover{background:var(--cyan-dk);transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;padding:6px}
+.burger span{display:block;width:22px;height:1.5px;background:var(--fg2);border-radius:2px;transition:all .3s}
+.mob-nav{display:none;flex-direction:column;background:var(--bg1);border-top:1px solid var(--border)}
+.mob-nav.open{display:flex}
+.mob-nav a{padding:15px 28px;font-size:.9375rem;font-weight:500;color:var(--fg2);border-bottom:1px solid var(--border);transition:color .2s}
+.mob-nav a:hover{color:var(--fg)}
+
+/* HERO */
+.hero{position:relative;padding:100px 0 80px;overflow:hidden;min-height:680px;display:flex;align-items:center;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(6,182,212,.12) 0%,transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cyan-dim);border:1px solid rgba(6,182,212,.22);padding:.45rem 1rem;border-radius:100px;font-size:.6875rem;font-weight:700;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.75rem}
+.hero-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;line-height:1.12;letter-spacing:-.03em;color:var(--fg);margin-bottom:1.25rem}
+.hero h1 .accent{color:var(--cyan)}
+.hero-sub{font-size:1.0625rem;color:var(--fg2);line-height:1.7;margin-bottom:2rem;max-width:480px}
+.hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--cyan);color:var(--bg);padding:1rem 2rem;border-radius:var(--r);font-size:.9375rem;font-weight:700;transition:all .25s;letter-spacing:-.01em}
+.btn-primary:hover{background:var(--cyan-dk);transform:translateY(-2px);box-shadow:0 16px 40px rgba(6,182,212,.25)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--fg2);padding:1rem 1.75rem;border-radius:var(--r);font-size:.9375rem;font-weight:500;border:1px solid var(--border2);transition:all .25s}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--fg);background:var(--cyan-dim)}
+.hero-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--border)}
+.hp{padding:20px 16px;background:rgba(13,26,46,.7);text-align:center;backdrop-filter:blur(12px)}
+.hp-num{font-size:1.625rem;font-weight:800;color:var(--fg);letter-spacing:-.03em;line-height:1}
+.hp-label{font-size:.6875rem;color:var(--fg3);font-weight:500;margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+.hero-visual{position:relative}
+.hero-panel{background:linear-gradient(145deg,var(--card),var(--card2));border:1px solid rgba(6,182,212,.18);border-radius:var(--rxl);padding:40px 32px 32px;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(6,182,212,.06),var(--shadow)}
+.hero-panel-glow{position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:60%;height:50%;background:radial-gradient(ellipse,rgba(6,182,212,.12) 0%,transparent 70%);pointer-events:none}
+.purity-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:var(--green);padding:6px 14px;border-radius:100px;font-size:.8125rem;font-weight:600;margin-bottom:1.5rem}
+.purity-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse-dot 2.5s infinite}
+.panel-compound{font-size:2rem;font-weight:800;color:var(--fg);letter-spacing:-.04em;margin-bottom:.25rem}
+.panel-batch{font-size:.8125rem;color:var(--fg3);margin-bottom:1.5rem}
+.hplc-bars{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
+.hplc-row{display:flex;align-items:center;gap:12px}
+.hplc-label{font-size:.75rem;color:var(--fg3);width:90px;text-align:right;flex-shrink:0}
+.hplc-track{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.hplc-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--cyan-dk),var(--cyan))}
+.hplc-val{font-size:.75rem;font-weight:700;color:var(--fg2);width:40px;flex-shrink:0}
+.panel-coa{display:flex;align-items:center;justify-content:space-between;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px}
+.coa-left{display:flex;align-items:center;gap:10px}
+.coa-ico{width:36px;height:36px;background:var(--cyan-dim);border:1px solid rgba(6,182,212,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:1rem;flex-shrink:0}
+.coa-label{font-size:.8125rem;font-weight:600;color:var(--fg)}
+.coa-sub{font-size:.6875rem;color:var(--fg3)}
+.coa-btn{background:var(--cyan);color:var(--bg);font-size:.75rem;font-weight:700;padding:.4rem .9rem;border-radius:6px}
+.f-badge{position:absolute;background:var(--card2);border:1px solid var(--border2);border-radius:var(--r);padding:10px 14px;display:flex;align-items:center;gap:8px;box-shadow:var(--shadow);backdrop-filter:blur(12px);animation:float 6s ease-in-out infinite;z-index:2}
+.f-badge.tl{top:-18px;left:-18px}
+.f-badge.br{bottom:-18px;right:-18px;animation-delay:-3s}
+.f-badge-ico{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.875rem;flex-shrink:0}
+.f-badge-txt{font-size:.75rem;font-weight:600;color:var(--fg)}
+.f-badge-sub{font-size:.625rem;color:var(--fg3)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* TICKER */
+.ticker{background:var(--bg1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;animation:tick 44s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 28px;font-size:.78125rem;font-weight:500;color:var(--fg3)}
+.ticker-item span{color:var(--cyan)}
+.ticker-dot{width:3px;height:3px;border-radius:50%;background:var(--fg3);flex-shrink:0}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* TRUST */
+.trust{background:var(--bg1);padding:3rem 0;border-bottom:1px solid var(--border)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.trust-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:20px;display:flex;align-items:flex-start;gap:14px;transition:border-color .25s}
+.trust-card:hover{border-color:rgba(6,182,212,.25)}
+.trust-ico{width:44px;height:44px;background:var(--cyan-dim);border:1px solid rgba(6,182,212,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--cyan);font-size:1.125rem}
+.trust-title{font-size:.9375rem;font-weight:600;color:var(--fg);margin-bottom:4px}
+.trust-desc{font-size:.8125rem;color:var(--fg3);line-height:1.5}
+
+/* PRODUCTS */
+.products{padding:100px 0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg1) 100%)}
+.sec-label{display:inline-block;font-size:.6875rem;font-weight:700;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.sec-h{font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-.03em;color:var(--fg);margin-bottom:12px;line-height:1.15}
+.sec-p{font-size:1.0625rem;color:var(--fg2);line-height:1.65;max-width:520px}
+.products-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:20px;flex-wrap:wrap}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{padding:.5rem 1.125rem;border-radius:100px;font-size:.8125rem;font-weight:600;border:1px solid var(--border2);background:transparent;color:var(--fg3);cursor:pointer;transition:all .2s}
+.pill:hover{color:var(--fg)}
+.pill.on{background:var(--cyan-dim);border-color:var(--cyan);color:var(--cyan)}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .35s;position:relative}
+.pc:hover{border-color:rgba(6,182,212,.3);transform:translateY(-6px);box-shadow:0 24px 64px rgba(0,0,0,.4),0 0 40px rgba(6,182,212,.04)}
+.pc-img{height:200px;background:linear-gradient(160deg,var(--bg2),var(--bg3));position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;border-bottom:1px solid var(--border);overflow:hidden}
+.pc-img-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(6,182,212,.06) 0%,transparent 70%)}
+.pc-img img{height:120px;width:auto;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 8px 24px rgba(0,0,0,.4))}
+.pc-badge{margin-top:10px;padding:3px 10px;border-radius:100px;font-size:.5625rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:1px solid;position:relative;z-index:1}
+.pc-badge.trending{background:rgba(6,182,212,.1);color:var(--cyan);border-color:rgba(6,182,212,.3)}
+.pc-badge.hot{background:rgba(239,68,68,.1);color:var(--red);border-color:rgba(239,68,68,.3)}
+.pc-badge.new{background:rgba(34,197,94,.1);color:var(--green);border-color:rgba(34,197,94,.3)}
+.pc-tag{position:absolute;top:12px;right:12px;font-size:.5625rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;z-index:2;background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25)}
+.pc-body{padding:18px 20px 20px}
+.pc-name{font-size:1rem;font-weight:700;color:var(--fg);margin-bottom:2px}
+.pc-dose{font-size:.75rem;color:var(--fg3);margin-bottom:10px}
+.pc-purity{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.pc-purity-bar{flex:1;height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.pc-purity-fill{height:100%;background:linear-gradient(90deg,var(--cyan-dk),var(--cyan));border-radius:2px}
+.pc-purity-label{font-size:.6875rem;font-weight:700;color:var(--cyan);flex-shrink:0}
+.pc-ft{display:flex;align-items:center;justify-content:space-between}
+.pc-price{font-size:1.25rem;font-weight:800;color:var(--fg);letter-spacing:-.03em}
+.btn-add{background:var(--cyan);color:var(--bg);font-size:.8125rem;font-weight:700;padding:.55rem 1.125rem;border-radius:8px;transition:all .2s}
+.btn-add:hover{background:var(--cyan-dk);transform:scale(1.04)}
+
+/* QUALITY */
+.quality{padding:100px 0;background:var(--bg1);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.quality-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.quality-steps{display:flex;flex-direction:column;gap:28px;margin-top:36px}
+.qs{display:flex;gap:18px}
+.qs-num{width:36px;height:36px;border-radius:50%;background:var(--cyan-dim);border:1px solid rgba(6,182,212,.25);color:var(--cyan);font-size:.8125rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.qs-title{font-size:.9375rem;font-weight:700;color:var(--fg);margin-bottom:4px}
+.qs-desc{font-size:.875rem;color:var(--fg3);line-height:1.6}
+.cert-panel{background:var(--card);border:1px solid var(--border);border-radius:var(--rxl);padding:36px;position:relative;overflow:hidden}
+.cert-panel::before{content:'';position:absolute;top:0;right:0;width:40%;height:40%;background:radial-gradient(ellipse at 100% 0%,var(--cyan-glow) 0%,transparent 70%);pointer-events:none}
+.cert-title{font-size:1.375rem;font-weight:700;color:var(--fg);margin-bottom:6px}
+.cert-sub{font-size:.875rem;color:var(--fg3);margin-bottom:24px}
+.cert-rows{display:flex;flex-direction:column;gap:10px}
+.cert-row{display:flex;align-items:center;gap:12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:14px}
+.cert-ico{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.875rem;flex-shrink:0}
+.cert-ico.pass{background:rgba(34,197,94,.1);color:var(--green)}
+.cert-ico.info{background:var(--cyan-dim);color:var(--cyan)}
+.cert-label{font-size:.875rem;font-weight:600;color:var(--fg)}
+.cert-val{font-size:.75rem;color:var(--fg3);margin-top:2px}
+.cert-status{margin-left:auto;font-size:.6875rem;font-weight:700;padding:.25rem .625rem;border-radius:4px;flex-shrink:0}
+.cert-status.pass{background:rgba(34,197,94,.1);color:var(--green)}
+
+/* FAQ */
+.faq{padding:100px 0;background:var(--bg)}
+.faq-inner{max-width:760px;margin:0 auto}
+.faq-list{margin-top:40px;display:flex;flex-direction:column;gap:2px}
+.faq-item{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:rgba(6,182,212,.25)}
+.faq-q{width:100%;background:var(--card);color:var(--fg);text-align:left;padding:20px 22px;font-size:.9375rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;transition:background .2s}
+.faq-item.open .faq-q{background:var(--card2)}
+.faq-q-ico{width:22px;height:22px;border-radius:50%;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.875rem;color:var(--fg3);transition:transform .3s,border-color .2s}
+.faq-item.open .faq-q-ico{transform:rotate(45deg);border-color:var(--cyan);color:var(--cyan)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+.faq-item.open .faq-a{max-height:240px}
+.faq-a p{padding:18px 22px;font-size:.9375rem;color:var(--fg2);line-height:1.65;background:var(--card)}
+
+/* NEWSLETTER */
+.nl{padding:80px 0;background:var(--bg1);border-top:1px solid var(--border)}
+.nl-box{background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:var(--rxl);padding:56px 64px;position:relative;overflow:hidden;text-align:center}
+.nl-box::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:70%;height:120%;background:radial-gradient(ellipse,rgba(6,182,212,.07) 0%,transparent 70%);pointer-events:none}
+.nl-label{color:var(--cyan);font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;position:relative}
+.nl-h{font-size:clamp(1.5rem,2.5vw,2.25rem);font-weight:700;color:var(--fg);margin-bottom:10px;letter-spacing:-.03em;position:relative}
+.nl-sub{font-size:1rem;color:var(--fg2);margin-bottom:28px;max-width:400px;margin-left:auto;margin-right:auto;position:relative}
+.nl-form{display:flex;gap:10px;max-width:420px;margin:0 auto;position:relative}
+.nl-input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:.85rem 1rem;color:var(--fg);font-size:.9375rem;outline:none;transition:border-color .2s}
+.nl-input:focus{border-color:var(--cyan)}
+.nl-input::placeholder{color:var(--fg3)}
+.nl-btn{background:var(--cyan);color:var(--bg);padding:.85rem 1.5rem;border-radius:var(--r);font-size:.875rem;font-weight:700;white-space:nowrap;transition:all .2s}
+.nl-btn:hover{background:var(--cyan-dk)}
+.nl-fine{font-size:.75rem;color:var(--fg3);margin-top:12px;position:relative}
+.nl-success{color:var(--green);font-size:.875rem;margin-top:12px;position:relative}
+.nl-success.hidden{display:none}
+
+/* FOOTER */
+footer{background:var(--bg1);border-top:1px solid var(--border);padding:64px 0 32px}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.ft-logo-mark{width:34px;height:34px;border-radius:8px;background:var(--cyan);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+.ft-logo-mark img{width:100%;height:100%;object-fit:cover}
+.ft-logo span{font-size:.875rem;font-weight:800;letter-spacing:.05em}
+.ft-logo em{font-style:normal;color:var(--cyan)}
+.ft-desc{font-size:.875rem;color:var(--fg3);line-height:1.65;margin-bottom:20px;max-width:280px}
+.ft-social{display:flex;gap:10px}
+.ft-social a{width:36px;height:36px;border-radius:8px;border:1px solid var(--border2);background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--fg3);font-size:.875rem;transition:all .2s}
+.ft-social a:hover{border-color:var(--cyan);color:var(--cyan)}
+.ft-title{font-size:.6875rem;font-weight:700;color:var(--fg);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+.ft-links{display:flex;flex-direction:column;gap:10px}
+.ft-links a{font-size:.875rem;color:var(--fg3);transition:color .2s}
+.ft-links a:hover{color:var(--fg)}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:24px;gap:16px;flex-wrap:wrap}
+.ft-copy{font-size:.8125rem;color:var(--fg3)}
+.ft-pays{display:flex;gap:8px;flex-wrap:wrap}
+.ft-pay{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:.25rem .625rem;font-size:.6875rem;font-weight:600;color:var(--fg3)}
+
+/* CART DRAWER */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.overlay.on{opacity:1;pointer-events:all}
+.cd{position:fixed;top:0;right:0;bottom:0;width:420px;max-width:92vw;background:var(--bg1);border-left:1px solid var(--border);z-index:301;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column}
+.cd.on{transform:translateX(0)}
+.cd-hd{padding:20px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.cd-hd h2{font-size:1.0625rem;font-weight:700;color:var(--fg)}
+.cd-x{background:none;color:var(--fg3);font-size:1.125rem;width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;transition:color .2s}
+.cd-x:hover{color:var(--fg)}
+#freeShipBar{padding:12px 22px;border-bottom:1px solid var(--border);font-size:.8125rem;color:var(--fg2)}
+.fsb-text{margin-bottom:8px}
+.fsb-track{height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.fsb-fill{height:100%;background:var(--cyan);border-radius:2px;transition:width .5s}
+.fsb-qual{color:var(--green);font-weight:600}
+.cd-items{flex:1;overflow-y:auto;padding:14px 22px}
+.cd-empty{text-align:center;padding:40px 20px;color:var(--fg3)}
+.cd-empty svg{width:36px;height:36px;margin:0 auto 12px}
+.cd-empty p{font-size:.9375rem}
+.cd-item{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border)}
+.cd-item-img{width:52px;height:52px;background:var(--bg3);border-radius:var(--r);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;border:1px solid var(--border)}
+.cd-item-img img{width:100%;height:100%;object-fit:contain;padding:6px}
+.cd-item-info{flex:1;min-width:0}
+.cd-item-name{font-size:.875rem;font-weight:600;color:var(--fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cd-item-dose{font-size:.6875rem;color:var(--fg3);margin-bottom:6px}
+.cd-item-row{display:flex;align-items:center;justify-content:space-between}
+.cd-item-qty{display:flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:3px 8px}
+.cd-item-qty button{background:none;color:var(--fg3);font-size:1rem;width:18px;transition:color .2s}
+.cd-item-qty button:hover{color:var(--fg)}
+.cd-item-qty span{font-size:.875rem;font-weight:600;color:var(--fg);min-width:16px;text-align:center}
+.cd-item-price{font-size:.9375rem;font-weight:700;color:var(--fg)}
+.cd-ft{padding:16px 22px;border-top:1px solid var(--border)}
+.cd-sub{display:flex;justify-content:space-between;font-size:.9375rem;margin-bottom:8px;color:var(--fg2)}
+.cd-sub strong{color:var(--fg);font-weight:800}
+.cd-note{font-size:.75rem;color:var(--fg3);margin-bottom:14px}
+.btn-co{width:100%;background:var(--cyan);color:var(--bg);font-weight:700;font-size:.9375rem;padding:1rem;border-radius:var(--r);transition:all .2s}
+.btn-co:hover{background:var(--cyan-dk)}
+
+/* CHECKOUT */
+.cho{position:fixed;inset:0;z-index:400;display:flex;align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;background:rgba(0,0,0,.7);opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px)}
+.cho.on{opacity:1;pointer-events:all}
+.chm{background:var(--bg1);border:1px solid var(--border);border-radius:var(--rxl);width:100%;max-width:840px;margin:auto;box-shadow:var(--shadow)}
+.chm-hd{padding:24px 28px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.chm-hd h2{font-size:1.125rem;font-weight:700;color:var(--fg)}
+.chm-body{padding:28px}
+.chm-grid{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+.fg-sec{font-size:.75rem;font-weight:700;color:var(--fg3);letter-spacing:.1em;text-transform:uppercase;margin:20px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.fg-sec:first-child{margin-top:0}
+.fg-g{margin-bottom:14px}
+.fg-l{display:block;font-size:.8125rem;font-weight:600;color:var(--fg2);margin-bottom:6px}
+.req{color:var(--cyan)}
+.fg-i,.fg-s{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:.7rem 1rem;color:var(--fg);font-size:.9375rem;outline:none;transition:border-color .2s}
+.fg-i:focus,.fg-s:focus{border-color:var(--cyan)}
+.fg-i::placeholder{color:var(--fg3)}
+.fg-s{appearance:none}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pm{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.pmeth{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:14px 16px;cursor:pointer;transition:all .2s}
+.pmeth.sel{border-color:var(--cyan);background:var(--cyan-dim)}
+.pmeth-hd{display:flex;align-items:center;gap:12px}
+.pmeth-radio{width:16px;height:16px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.pmeth.sel .pmeth-radio{border-color:var(--cyan);background:var(--cyan)}
+.pmeth.sel .pmeth-radio::after{content:'';width:6px;height:6px;background:var(--bg);border-radius:50%;display:block}
+.pmeth-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.875rem;flex-shrink:0}
+.pmeth-title{font-size:.875rem;font-weight:600;color:var(--fg)}
+.pmeth-desc{font-size:.75rem;color:var(--fg3);margin-top:2px}
+.crypto-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.cb-title{font-size:.8125rem;color:var(--fg3);margin-bottom:12px;line-height:1.5}
+.ca{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)}
+.ca:last-of-type{border-bottom:none}
+.ca-ico{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0}
+.ca-ico.eth{background:#627eea;color:#fff}
+.ca-ico.usdc{background:#2775ca;color:#fff}
+.ca-ico.sol{background:#9945ff;color:#fff}
+.ca-ico.btc{background:#f7931a;color:#fff}
+.ca-d{flex:1;min-width:0}
+.ca-l{font-size:.75rem;font-weight:600;color:var(--fg);margin-bottom:2px}
+.ca-v{font-size:.625rem;color:var(--fg3);font-family:monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn-cp{background:var(--card2);border:1px solid var(--border2);color:var(--fg2);font-size:.6875rem;font-weight:600;padding:.3rem .625rem;border-radius:6px;flex-shrink:0;transition:all .2s}
+.btn-cp:hover{border-color:var(--cyan);color:var(--cyan)}
+.dc-wrap{margin:14px 0}
+.dc-label{font-size:.8125rem;font-weight:600;color:var(--fg2);display:block;margin-bottom:6px}
+.dc-row{display:flex;gap:8px}
+.dc-input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:.7rem 1rem;color:var(--fg);font-size:.875rem;outline:none;transition:border-color .2s}
+.dc-input:focus{border-color:var(--cyan)}
+.dc-input::placeholder{color:var(--fg3)}
+.dc-btn{background:var(--bg3);border:1px solid var(--border2);color:var(--fg2);padding:.7rem 1rem;border-radius:var(--r);font-size:.8125rem;font-weight:600;transition:all .2s;white-space:nowrap}
+.dc-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.dc-msg{font-size:.8125rem;margin-top:6px}
+.dc-msg.ok{color:var(--green)}
+.dc-msg.err{color:var(--red)}
+.ord-sum{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rl);padding:22px;position:sticky;top:24px}
+.ord-sum h3{font-size:1.0625rem;font-weight:700;color:var(--fg);margin-bottom:16px}
+.ord-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)}
+.ord-item-img{width:40px;height:40px;background:var(--card2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;border:1px solid var(--border)}
+.ord-item-img img{width:100%;height:100%;object-fit:contain;padding:4px}
+.ord-item-info{flex:1;min-width:0}
+.ord-item-name{font-size:.8125rem;font-weight:600;color:var(--fg)}
+.ord-item-dose{font-size:.6875rem;color:var(--fg3)}
+.ord-item-price{font-size:.875rem;font-weight:700;color:var(--fg);flex-shrink:0}
+.ot{display:flex;justify-content:space-between;padding-top:12px;margin-top:4px;font-size:1rem;color:var(--fg2);border-top:1px solid var(--border)}
+.ot strong{color:var(--fg);font-weight:800}
+
+/* POPUP */
+.epop-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px)}
+.epop-overlay.on{opacity:1;pointer-events:all}
+.epop-modal{position:relative;width:440px;max-width:100%;background:var(--bg1);border:1px solid var(--border);border-radius:var(--rxl);padding:44px;text-align:center;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.epop-modal::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:60%;height:80%;background:radial-gradient(ellipse,rgba(6,182,212,.1) 0%,transparent 70%);pointer-events:none}
+.epop-close{position:absolute;top:16px;right:16px;background:var(--bg3);border:1px solid var(--border2);color:var(--fg3);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem;transition:all .2s}
+.epop-close:hover{color:var(--fg)}
+.epop-eyebrow{font-size:.6875rem;font-weight:700;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;position:relative}
+.epop-h{font-size:1.625rem;font-weight:700;color:var(--fg);letter-spacing:-.02em;margin-bottom:10px;position:relative}
+.epop-sub{font-size:.9375rem;color:var(--fg2);margin-bottom:24px;position:relative}
+.epop-form{display:flex;flex-direction:column;gap:10px;position:relative}
+.epop-input{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:.875rem 1rem;color:var(--fg);font-size:.9375rem;outline:none;transition:border-color .2s;text-align:center}
+.epop-input:focus{border-color:var(--cyan)}
+.epop-input::placeholder{color:var(--fg3)}
+.epop-btn{background:var(--cyan);color:var(--bg);padding:.875rem;border-radius:var(--r);font-size:.9375rem;font-weight:700;transition:all .2s}
+.epop-btn:hover{background:var(--cyan-dk)}
+.epop-fine{font-size:.75rem;color:var(--fg3);margin-top:10px;position:relative}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(16px);z-index:600;background:var(--card2);border:1px solid rgba(6,182,212,.25);border-radius:var(--r);padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 40px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:all .35s cubic-bezier(.16,1,.3,1);white-space:nowrap}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast-ico{width:28px;height:28px;border-radius:50%;background:var(--cyan);color:var(--bg);font-size:.875rem;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.toast-text{font-size:.875rem;font-weight:600;color:var(--fg)}
+.toast-time{font-size:.75rem;color:var(--fg3);margin-top:2px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .quality-grid{grid-template-columns:1fr;gap:40px}
+  .chm-grid{grid-template-columns:1fr}
+  .ord-sum{position:static}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-visual{display:none}
+  .hero{padding:60px 0}
+  .nav-links,.btn-order{display:none}
+  .burger{display:flex}
+  .nl-form{flex-direction:column}
+  .products-hd{flex-direction:column;align-items:flex-start}
+  .product-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr}
+  .chm-body{padding:18px}
+  .fg-row{grid-template-columns:1fr}
+  .nl-box{padding:36px 28px}
+}
+</style>
 </head>
 <body>
-    <!-- Top bar -->
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <div class="top-bar-left">
-                <span>✓ Free shipping over $150</span>
-                <span>✓ COA with every order</span>
-                <span>✓ Same-day dispatch before 2PM EST</span>
-            </div>
-            <div class="top-bar-right">
-                <a href="mailto:support@titanpeptidelab.com">Support</a>
-                <a href="mailto:orders@titanpeptidelab.com">Orders</a>
-            </div>
-        </div>
+
+<!-- ANNOUNCEMENT -->
+<div class="ann">Free US shipping on orders over $150 <span>·</span> Use <strong>WELCOME10</strong> for 10% off your first order <span>·</span> COA included with every vial</div>
+
+<!-- NAV -->
+<nav>
+  <div class="c nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark"><img src="titan-icon.png" alt="Titan Peptide Lab"></div>
+      <span class="logo-text">TITAN <em>PEPTIDE</em> LAB</span>
+    </a>
+    <div class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#quality">Quality</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:orders@titanpeptidelab.com">Contact</a>
     </div>
-
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <a href="#" class="logo">
-                <div class="logo-icon">TPL</div>
-                <div class="logo-text">
-                    <span class="logo-name">Titan Peptide Lab</span>
-                    <span class="logo-tagline">Research-Grade Compounds</span>
-                </div>
-            </a>
-
-            <nav>
-                <a href="#products">Products</a>
-                <a href="#quality">Quality Standards</a>
-                <a href="#about">About</a>
-                <a href="#research">Research</a>
-                <a href="#support">Support</a>
-            </nav>
-
-            <div class="header-actions">
-                <div class="search-box">
-                    <input type="text" placeholder="Search peptides...">
-                </div>
-                <a href="#cart" class="cart-btn">Cart (0)</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Research peptides <strong>verified to exacting standards</strong></h1>
-            <p class="hero-subtitle">Every compound independently tested via HPLC and mass spectrometry. Batch-specific certificates included with every order.</p>
-            
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="hero-stat-number">99%+</span>
-                    <span class="hero-stat-label">HPLC Verified Purity</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">2,400+</span>
-                    <span class="hero-stat-label">Orders Shipped</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">160+</span>
-                    <span class="hero-stat-label">Countries Served</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">24h</span>
-                    <span class="hero-stat-label">Dispatch Guarantee</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust bar -->
-    <div class="trust-bar">
-        <div class="trust-bar-content">
-            <div class="trust-item">
-                <strong>✓</strong> HPLC Verified ≥99%
-            </div>
-            <div class="trust-item">
-                <strong>✓</strong> Mass Spec Confirmed
-            </div>
-            <div class="trust-item">
-                <strong>✓</strong> ISO-Certified Partners
-            </div>
-            <div class="trust-item">
-                <strong>✓</strong> COA With Every Order
-            </div>
-            <div class="trust-item">
-                <strong>✓</strong> 24-Hour Dispatch
-            </div>
-            <div class="trust-item">
-                <strong>✓</strong> Endotoxin Tested
-            </div>
-        </div>
+    <div class="nav-actions">
+      <button class="cart-btn" onclick="openCart()" aria-label="Open cart">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+        <span class="cart-count hidden" id="cartCount">0</span>
+      </button>
+      <a href="#products" class="btn-order">Shop Now</a>
+      <button class="burger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
+  </div>
+  <div class="mob-nav" id="mobNav">
+    <a href="#products" onclick="closeMob()">Products</a>
+    <a href="#quality" onclick="closeMob()">Quality</a>
+    <a href="#faq" onclick="closeMob()">FAQ</a>
+    <a href="mailto:orders@titanpeptidelab.com" onclick="closeMob()">Contact</a>
+  </div>
+</nav>
 
-    <!-- Products -->
-    <section class="products" id="products">
-        <div class="section-header">
-            <h2>Research <strong>Peptides</strong></h2>
-            <p>ISO-certified synthesis. Independent third-party testing. Certificate of Analysis with every compound.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="mol-bg">
+    <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <circle cx="200" cy="150" r="8" stroke="#06b6d4" stroke-width="1.5" fill="none"/><circle cx="350" cy="200" r="6" stroke="#06b6d4" stroke-width="1.5" fill="none"/><circle cx="280" cy="310" r="10" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+      <line x1="200" y1="150" x2="350" y2="200" stroke="#06b6d4" stroke-width="1"/><line x1="350" y1="200" x2="280" y2="310" stroke="#06b6d4" stroke-width="1"/><line x1="200" y1="150" x2="130" y2="240" stroke="#06b6d4" stroke-width="1"/>
+      <circle cx="130" cy="240" r="5" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+      <circle cx="900" cy="100" r="7" stroke="#06b6d4" stroke-width="1.5" fill="none"/><circle cx="1050" cy="180" r="9" stroke="#06b6d4" stroke-width="1.5" fill="none"/><circle cx="980" cy="300" r="6" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+      <line x1="900" y1="100" x2="1050" y2="180" stroke="#06b6d4" stroke-width="1"/><line x1="1050" y1="180" x2="980" y2="300" stroke="#06b6d4" stroke-width="1"/><line x1="1050" y1="180" x2="1120" y2="260" stroke="#06b6d4" stroke-width="1"/>
+      <circle cx="1120" cy="260" r="5" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+      <circle cx="580" cy="470" r="8" stroke="#06b6d4" stroke-width="1" fill="none"/><circle cx="500" cy="510" r="5" stroke="#06b6d4" stroke-width="1" fill="none"/><circle cx="660" cy="530" r="6" stroke="#06b6d4" stroke-width="1" fill="none"/>
+      <line x1="500" y1="510" x2="580" y2="470" stroke="#06b6d4" stroke-width=".75"/><line x1="580" y1="470" x2="660" y2="530" stroke="#06b6d4" stroke-width=".75"/>
+    </svg>
+  </div>
+  <div class="c">
+    <div class="hero-grid">
+      <div data-reveal>
+        <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Independently Verified</div>
+        <h1>Research peptides.<br>Zero&nbsp;<span class="accent">compromise</span><br>on purity.</h1>
+        <p class="hero-sub">Every compound HPLC-tested and mass spectrometry confirmed by independent third-party labs. Batch-specific COA with every order.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Shop Compounds
+          </a>
+          <a href="#quality" class="btn-ghost">View Process</a>
         </div>
-
-        <div class="category-tabs">
-            <div class="category-tab active">All</div>
-            <div class="category-tab">Lyophilized</div>
-            <div class="category-tab">Liquid</div>
-            <div class="category-tab">Nasal Spray</div>
-            <div class="category-tab">Research Stacks</div>
+        <div class="hero-proof">
+          <div class="hp"><div class="hp-num">99%+</div><div class="hp-label">HPLC Verified</div></div>
+          <div class="hp"><div class="hp-num">160+</div><div class="hp-label">Countries Shipped</div></div>
+          <div class="hp"><div class="hp-num">48hr</div><div class="hp-label">Processing</div></div>
         </div>
-
-        <div class="product-grid">
-            <!-- BPC-157 5mg -->
-            <div class="product-card">
-                <div class="product-image">
-                    <div class="product-badge popular">Popular</div>
-                    <span style="font-size: 48px; opacity: 0.3;">🧪</span>
-                </div>
-                <div class="product-info">
-                    <div class="product-type">Lyophilized</div>
-                    <div class="product-name">BPC-157</div>
-                    <div class="product-size">5mg vial</div>
-                    <div class="product-purity">✓ 99.3% Verified</div>
-                    <div class="product-footer">
-                        <span class="product-price">$44.99</span>
-                        <span class="product-stock">In Stock</span>
-                    </div>
-                    <button class="add-to-cart" style="width: 100%; margin-top: 12px;">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- BPC-157 10mg -->
-            <div class="product-card">
-                <div class="product-image">
-                    <span style="font-size: 48px; opacity: 0.3;">🧪</span>
-                </div>
-                <div class="product-info">
-                    <div class="product-type">Lyophilized</div>
-                    <div class="product-name">BPC-157</div>
-                    <div class="product-size">10mg vial</div>
-                    <div class="product-purity">✓ 99.3% Verified</div>
-                    <div class="product-footer">
-                        <span class="product-price">$54.99</span>
-                        <span class="product-stock">In Stock</span>
-                    </div>
-                    <button class="add-to-cart" style="width: 100%; margin-top: 12px;">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- TB-500 5mg -->
-            <div class="product-card">
-                <div class="product-image">
-                    <div class="product-badge popular">Popular</div>
-                    <span style="font-size: 48px; opacity: 0.3;">🧪</span>
-                </div>
-                <div class="product-info">
-                    <div class="product-type">Lyophilized</div>
-                    <div class="product-name">TB-500</div>
-                    <div class="product-size">5mg vial</div>
-                    <div class="product-purity">✓ 99.1% Verified</div>
-                    <div class="product-footer">
-                        <span class="product-price">$49.99</span>
-                        <span class="product-stock">In Stock</span>
-                    </div>
-                    <button class="add-to-cart" style="width: 100%; margin-top: 12px;">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Semaglutide 5mg -->
-            <div class="product-card">
-                <div class="product-image">
-                    <div class="product-badge">New</div>
-                    <div class="product-badge popular">Popular</div>
-                    <span style="font-size: 48px; opacity: 0.3;">🧪</span>
-                </div>
-                <div class="product-info">
-                    <div class="product-type">Lyophilized</div>
-                    <div class="product-name">Semaglutide</div>
-                    <div class="product-size">5mg vial</div>
-                    <div class="product-purity">✓ 99.4% Verified</div>
-                    <div class="product-footer">
-                        <span class="product-price">$89.99</span>
-                        <span class="product-stock">In Stock</span>
-                    </div>
-                    <button class="add-to-cart" style="width: 100%; margin-top: 12px;">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Retatrutide 5mg -->
-            <div class="product-card">
-                <div class="product-image">
-                    <span style="font-size: 48px; opacity: 0.3;">🧪</span>
-                </div>
-                <div class="product-info">
-                    <div class="product-type">Lyophilized</div>
-                    <div class="product-name">Retatrutide</div>
-                    <div class="product-size">5mg vial</div>
-                    <div class="product-purity">✓ 98.9% Verified</div>
-                    <div class="product-footer">
-                        <span class="product-price">$59.99</span>
-                        <span class="product-stock">In Stock</span>
-                    </div>
-                    <button class="add-to-cart" style="width: 100%; margin-top: 12px;">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Tirzepatide 5mg -->
-            <div class="product-card">
-                <div class="product-image">
-                    <div class="product-badge">New</div>
-                    <span style="font-size: 48px; opacity: 0.3;">🧪</span>
-                </div>
-                <div class="product-info">
-                    <div class="product-type">Lyophilized</div>
-                    <div class="product-name">Tirzepatide</div>
-                    <div class="product-size">5mg vial</div>
-                    <div class="product-purity">✓ 99.2% Verified</div>
-                    <div class="product-footer">
-                        <span class="product-price">$79.99</span>
-                        <span class="product-stock">In Stock</span>
-                    </div>
-                    <button class="add-to-cart" style="width: 100%; margin-top: 12px;">Add to Cart</button>
-                </div>
-            </div>
+      </div>
+      <div class="hero-visual" data-reveal data-d="2">
+        <div class="f-badge tl">
+          <div class="f-badge-ico" style="background:rgba(34,197,94,.1)">✓</div>
+          <div><div class="f-badge-txt">COA Included</div><div class="f-badge-sub">Every order</div></div>
         </div>
-    </section>
-
-    <!-- Quality -->
-    <section class="quality" id="quality">
-        <div class="quality-content">
-            <div class="section-header">
-                <h2>We don't just test. <strong>We verify.</strong></h2>
-                <p>Every batch undergoes comprehensive analysis before shipment.</p>
+        <div class="hero-panel">
+          <div class="hero-panel-glow"></div>
+          <div class="purity-badge"><span class="purity-dot"></span>99.4% Verified Pure</div>
+          <div class="panel-compound">BPC-157</div>
+          <div class="panel-batch">Batch #TPL-2604A · HPLC Analysis</div>
+          <div class="hplc-bars">
+            <div class="hplc-row"><span class="hplc-label">Purity</span><div class="hplc-track"><div class="hplc-fill" style="width:99.4%"></div></div><span class="hplc-val">99.4%</span></div>
+            <div class="hplc-row"><span class="hplc-label">Mass Spec</span><div class="hplc-track"><div class="hplc-fill" style="width:100%"></div></div><span class="hplc-val">✓ Pass</span></div>
+            <div class="hplc-row"><span class="hplc-label">Endotoxin</span><div class="hplc-track"><div class="hplc-fill" style="width:100%"></div></div><span class="hplc-val">✓ Pass</span></div>
+            <div class="hplc-row"><span class="hplc-label">Heavy Metals</span><div class="hplc-track"><div class="hplc-fill" style="width:100%"></div></div><span class="hplc-val">✓ Pass</span></div>
+          </div>
+          <div class="panel-coa">
+            <div class="coa-left">
+              <div class="coa-ico">📄</div>
+              <div><div class="coa-label">Certificate of Analysis</div><div class="coa-sub">Third-party · April 2026</div></div>
             </div>
-
-            <div class="quality-grid">
-                <div class="quality-card">
-                    <div class="quality-icon">🔬</div>
-                    <h3>HPLC Purity Analysis</h3>
-                    <p>High-Performance Liquid Chromatography confirms ≥99% purity on every production run. Full chromatograms included in your COA.</p>
-                </div>
-
-                <div class="quality-card">
-                    <div class="quality-icon">⚗️</div>
-                    <h3>Mass Spectrometry</h3>
-                    <p>MS analysis verifies exact molecular weight, ruling out analogues or degradation products before dispatch.</p>
-                </div>
-
-                <div class="quality-card">
-                    <div class="quality-icon">📋</div>
-                    <h3>Batch-Specific COA</h3>
-                    <p>Not a generic PDF — your Certificate of Analysis matches your exact batch number, printed and included with your shipment.</p>
-                </div>
-            </div>
+            <button class="coa-btn" onclick="alert('COA included with every order')">View COA</button>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="#" class="logo">
-                    <div class="logo-icon">TPL</div>
-                    <div class="logo-text">
-                        <span class="logo-name">Titan Peptide Lab</span>
-                        <span class="logo-tagline">Research-Grade Compounds</span>
-                    </div>
-                </a>
-                <p>Premium research-grade peptides with independently verified purity. Advancing scientific discovery through uncompromising quality standards.</p>
-            </div>
-
-            <div class="footer-column">
-                <h4>Products</h4>
-                <ul>
-                    <li><a href="#">Lyophilized Peptides</a></li>
-                    <li><a href="#">Liquid Formulations</a></li>
-                    <li><a href="#">Nasal Sprays</a></li>
-                    <li><a href="#">Research Stacks</a></li>
-                    <li><a href="#">Wholesale</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Quality</h4>
-                <ul>
-                    <li><a href="#">HPLC Testing</a></li>
-                    <li><a href="#">Mass Spectrometry</a></li>
-                    <li><a href="#">COA Verification</a></li>
-                    <li><a href="#">ISO Certification</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="mailto:support@titanpeptidelab.com">support@titanpeptidelab.com</a></li>
-                    <li><a href="mailto:orders@titanpeptidelab.com">orders@titanpeptidelab.com</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Shipping</a></li>
-                </ul>
-            </div>
+        <div class="f-badge br">
+          <div class="f-badge-ico" style="background:rgba(6,182,212,.1)">🔬</div>
+          <div><div class="f-badge-txt">Mass Spec Confirmed</div><div class="f-badge-sub">Independent lab</div></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="footer-bottom">
-            <div>© 2026 Titan Peptide Lab. All rights reserved.</div>
-            <div>All products for research use only. Not for human consumption.</div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item"><span>BPC-157</span> — 99.4% Pure <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>TB-500</span> — Mass Spec Verified <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>Retatrutide</span> — 99.1% Pure <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>Selank</span> — Third-Party COA <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>Semax</span> — HPLC Certified <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>CJC-1295+Ipa</span> — 99.2% Pure <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>WELCOME10</span> — 10% Off First Order <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>Free Shipping</span> — Orders Over $150 <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>BPC-157</span> — 99.4% Pure <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>TB-500</span> — Mass Spec Verified <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>Retatrutide</span> — 99.1% Pure <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>Selank</span> — Third-Party COA <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>Semax</span> — HPLC Certified <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>CJC-1295+Ipa</span> — 99.2% Pure <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>WELCOME10</span> — 10% Off First Order <span class="ticker-dot"></span></span>
+    <span class="ticker-item"><span>Free Shipping</span> — Orders Over $150 <span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="c">
+    <div class="trust-grid">
+      <div class="trust-card" data-reveal><div class="trust-ico">🔬</div><div><div class="trust-title">HPLC + Mass Spec</div><div class="trust-desc">Every batch independently verified. Chromatograms in your COA.</div></div></div>
+      <div class="trust-card" data-reveal data-d="1"><div class="trust-ico">📋</div><div><div class="trust-title">Batch COA Included</div><div class="trust-desc">Certificate of Analysis shipped with every vial. No exceptions.</div></div></div>
+      <div class="trust-card" data-reveal data-d="2"><div class="trust-ico">🌍</div><div><div class="trust-title">160+ Countries</div><div class="trust-desc">Discreet, customs-compliant packaging. DHL Express international.</div></div></div>
+      <div class="trust-card" data-reveal data-d="3"><div class="trust-ico">₿</div><div><div class="trust-title">Crypto Payments</div><div class="trust-desc">BTC, ETH, USDC, SOL accepted. Private and secure.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="c">
+    <div class="products-hd">
+      <div data-reveal>
+        <div class="sec-label">Catalog</div>
+        <h2 class="sec-h">Research Compounds</h2>
+        <p class="sec-p">Every vial lyophilized, vacuum-sealed, tested. Batch COA included.</p>
+      </div>
+      <div class="pills" data-reveal data-d="1">
+        <button class="pill on" onclick="filterProducts('all',this)">All</button>
+        <button class="pill" onclick="filterProducts('healing',this)">Healing & Recovery</button>
+        <button class="pill" onclick="filterProducts('growth',this)">Growth</button>
+        <button class="pill" onclick="filterProducts('cognitive',this)">Cognitive</button>
+      </div>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- QUALITY -->
+<section class="quality" id="quality">
+  <div class="c">
+    <div class="quality-grid">
+      <div data-reveal>
+        <div class="sec-label">Our Process</div>
+        <h2 class="sec-h">Don't trust us.<br>Trust the data.</h2>
+        <p class="sec-p">Independent verification at every step. No batch ships without passing all four checkpoints.</p>
+        <div class="quality-steps">
+          <div class="qs"><div class="qs-num">01</div><div><div class="qs-title">US-Based Synthesis Partners</div><div class="qs-desc">Solid-phase peptide synthesis with multiple purification cycles. 99%+ purity target from the start.</div></div></div>
+          <div class="qs"><div class="qs-num">02</div><div><div class="qs-title">Independent Lab Testing</div><div class="qs-desc">HPLC purity analysis, mass spectrometry, endotoxin screening, and heavy metals — all third-party.</div></div></div>
+          <div class="qs"><div class="qs-num">03</div><div><div class="qs-title">Documentation Package</div><div class="qs-desc">Batch-specific COA with chromatograms. MSDS sheets. Storage protocols. Chain of custody.</div></div></div>
+          <div class="qs"><div class="qs-num">04</div><div><div class="qs-title">Cold-Chain Fulfillment</div><div class="qs-desc">Lyophilized powder only. Vacuum-sealed. Desiccant packs. Temperature-monitored cold packs available.</div></div></div>
         </div>
-    </footer>
+      </div>
+      <div class="cert-panel" data-reveal data-d="2">
+        <div class="cert-title">Sample COA Results</div>
+        <div class="cert-sub">BPC-157 — Batch #TPL-2604A</div>
+        <div class="cert-rows">
+          <div class="cert-row"><div class="cert-ico pass">✓</div><div><div class="cert-label">HPLC Purity</div><div class="cert-val">Method: Reverse-phase C18</div></div><div class="cert-status pass">99.4%</div></div>
+          <div class="cert-row"><div class="cert-ico pass">✓</div><div><div class="cert-label">Mass Spectrometry</div><div class="cert-val">Molecular weight confirmed</div></div><div class="cert-status pass">PASS</div></div>
+          <div class="cert-row"><div class="cert-ico pass">✓</div><div><div class="cert-label">Endotoxin (LAL)</div><div class="cert-val">&lt;1.0 EU/mg</div></div><div class="cert-status pass">PASS</div></div>
+          <div class="cert-row"><div class="cert-ico pass">✓</div><div><div class="cert-label">Heavy Metals</div><div class="cert-val">Pb, As, Cd, Hg screened</div></div><div class="cert-status pass">PASS</div></div>
+          <div class="cert-row"><div class="cert-ico info">📦</div><div><div class="cert-label">Storage</div><div class="cert-val">−20°C lyophilized, dark, desiccated</div></div><div class="cert-status" style="background:var(--cyan-dim);color:var(--cyan)">Stable</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="c">
+    <div class="faq-inner">
+      <div data-reveal style="text-align:center">
+        <div class="sec-label">FAQ</div>
+        <h2 class="sec-h">Common Questions</h2>
+      </div>
+      <div class="faq-list" data-reveal data-d="1">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What purity standard do your peptides meet? <span class="faq-q-ico">+</span></button><div class="faq-a"><p>All peptides are independently verified to ≥99% purity via HPLC and confirmed by mass spectrometry. Every batch undergoes endotoxin testing. A Certificate of Analysis with batch-specific results is included with every order.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you ship internationally? <span class="faq-q-ico">+</span></button><div class="faq-a"><p>Yes. We ship to 160+ countries with customs-compliant, discreet packaging. International orders typically arrive in 5–10 business days via DHL Express. Free shipping on orders over $150 domestic.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept? <span class="faq-q-ico">+</span></button><div class="faq-a"><p>We accept Bitcoin, Ethereum, USDC (ERC-20 and Solana), and Solana. Bank/wire transfer is available for wholesale or institutional orders. Crypto payments are private and final.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How should I store peptides after delivery? <span class="faq-q-ico">+</span></button><div class="faq-a"><p>Lyophilized peptides should be stored at −20°C for long-term or 2–8°C for short-term. Reconstituted peptides should be refrigerated and used within 30 days. Avoid freeze-thaw cycles.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are these peptides for human consumption? <span class="faq-q-ico">+</span></button><div class="faq-a"><p>No. All products are sold strictly for in-vitro research and laboratory use only. Not intended for human or animal consumption. Buyer assumes all responsibility for compliance with local regulations.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you offer discount codes? <span class="faq-q-ico">+</span></button><div class="faq-a"><p>Yes. Use code <strong>WELCOME10</strong> for 10% off your first order. Enter it at checkout. Additional codes are available to newsletter subscribers.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="nl">
+  <div class="c">
+    <div class="nl-box" data-reveal>
+      <div class="nl-label">Stay Updated</div>
+      <h2 class="nl-h">Restock alerts &amp; research news.</h2>
+      <p class="nl-sub">Join researchers who get early access to new compounds and limited-batch releases.</p>
+      <form class="nl-form" onsubmit="newsletterSubmit(event)">
+        <input type="email" class="nl-input" id="nlEmail" placeholder="your@email.com" required>
+        <button type="submit" class="nl-btn">Subscribe</button>
+      </form>
+      <p class="nl-fine">No spam. Unsubscribe anytime.</p>
+      <div class="nl-success hidden" id="nlSuccess">✓ Subscribed. Your welcome code is WELCOME10.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="c">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-logo">
+          <div class="ft-logo-mark"><img src="titan-icon.png" alt="Titan"></div>
+          <span>TITAN <em>PEPTIDE</em> LAB</span>
+        </div>
+        <p class="ft-desc">Research-grade peptides, independently verified. Built for scientists who refuse to compromise on quality.</p>
+        <div class="ft-social">
+          <a href="#" aria-label="Telegram">✈</a>
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="mailto:orders@titanpeptidelab.com" aria-label="Email">✉</a>
+        </div>
+      </div>
+      <div><div class="ft-title">Shop</div><div class="ft-links"><a href="#products">All Products</a><a href="#products">Healing & Recovery</a><a href="#products">Growth Peptides</a><a href="#products">Cognitive</a></div></div>
+      <div><div class="ft-title">Support</div><div class="ft-links"><a href="#faq">FAQ</a><a href="#quality">Quality Standards</a><a href="#faq">Shipping Info</a><a href="mailto:orders@titanpeptidelab.com">Contact</a></div></div>
+      <div><div class="ft-title">Legal</div><div class="ft-links"><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">Research Use Only</a></div></div>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-copy">© 2026 Titan Peptide Lab. All rights reserved. For research use only.</p>
+      <div class="ft-pays"><span class="ft-pay">₿ BTC</span><span class="ft-pay">Ξ ETH</span><span class="ft-pay">◎ SOL</span><span class="ft-pay">$ USDC</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cd" id="cartDrawer">
+  <div class="cd-hd"><h2>Cart</h2><button class="cd-x" onclick="closeCart()">✕</button></div>
+  <div id="freeShipBar" style="display:none"></div>
+  <div class="cd-items" id="cartItems">
+    <div class="cd-empty"><svg fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg><p>Your cart is empty</p></div>
+  </div>
+  <div class="cd-ft" id="cartFooter" style="display:none">
+    <div class="cd-sub"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>
+    <p class="cd-note">Free US shipping on orders over $150.</p>
+    <button class="btn-co" onclick="openCheckout()">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="cho" id="checkoutOverlay">
+  <div class="chm">
+    <div class="chm-hd"><h2 class="serif">Complete Your Order</h2><button class="cd-x" onclick="closeCheckout()">✕</button></div>
+    <div class="chm-body" id="checkoutBody">
+      <div class="chm-grid">
+        <div>
+          <form id="checkoutForm" onsubmit="submitOrder(event)">
+            <div class="fg-sec">Contact Information</div>
+            <div class="fg-g"><label class="fg-l" for="co-email">Email <span class="req">*</span></label><input type="email" class="fg-i" id="co-email" name="email" required placeholder="your@email.com" autocomplete="email"></div>
+            <div class="fg-g"><label class="fg-l" for="co-name">Full Name <span class="req">*</span></label><input type="text" class="fg-i" id="co-name" name="name" required placeholder="John Doe" autocomplete="name"></div>
+            <div class="fg-sec">Shipping Address</div>
+            <div class="fg-g">
+              <label class="fg-l">Country / Region <span class="req">*</span></label>
+              <select class="fg-s" name="country" id="coCountry" onchange="updateFormForCountry()" required>
+                <option value="" selected disabled>Select country</option>
+                <option value="US">United States</option><option value="CA">Canada</option><option value="GB">United Kingdom</option><option value="AU">Australia</option><option value="DE">Germany</option><option value="FR">France</option><option value="JP">Japan</option><option value="NL">Netherlands</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="NO">Norway</option><option value="DK">Denmark</option><option value="FI">Finland</option><option value="AT">Austria</option><option value="BE">Belgium</option><option value="ES">Spain</option><option value="IT">Italy</option><option value="PT">Portugal</option><option value="PL">Poland</option><option value="SG">Singapore</option><option value="HK">Hong Kong</option><option value="KR">South Korea</option><option value="AE">UAE</option><option value="ZA">South Africa</option><option value="BR">Brazil</option><option value="MX">Mexico</option><option value="OTHER">Other</option>
+              </select>
+            </div>
+            <div class="fg-g"><label class="fg-l">Street Address <span class="req">*</span></label><input type="text" class="fg-i" name="address" required placeholder="Street address, building, suite" autocomplete="address-line1"></div>
+            <div class="fg-g"><label class="fg-l">Address Line 2 <span style="color:var(--fg3);font-weight:400">(optional)</span></label><input type="text" class="fg-i" name="address2" placeholder="Apartment, unit" autocomplete="address-line2"></div>
+            <div class="fg-row">
+              <div class="fg-g"><label class="fg-l">City <span class="req">*</span></label><input type="text" class="fg-i" name="city" required></div>
+              <div class="fg-g"><label class="fg-l" id="coStateLabel">State/Province <span class="req">*</span></label><input type="text" class="fg-i" name="state" required></div>
+            </div>
+            <div class="fg-row">
+              <div class="fg-g"><label class="fg-l" id="coZipLabel">ZIP/Postal Code <span class="req">*</span></label><input type="text" class="fg-i" name="zip" required></div>
+              <div class="fg-g"><label class="fg-l">Phone <span style="color:var(--fg3);font-weight:400">(optional)</span></label><input type="tel" class="fg-i" name="phone" placeholder="+1 (555) 000-0000"></div>
+            </div>
+            <div class="fg-sec">Payment Method</div>
+            <div class="pm">
+              <div class="pmeth sel" onclick="selectPayment('crypto',this)">
+                <div class="pmeth-hd"><div class="pmeth-radio"></div><div class="pmeth-ico" style="background:#f7931a"><span style="color:#fff;font-weight:800;font-size:.875rem">₿</span></div><div><div class="pmeth-title">Cryptocurrency</div><div class="pmeth-desc">BTC · ETH · USDC (ERC-20) · SOL · USDC (Solana)</div></div></div>
+              </div>
+              <div class="pmeth" onclick="selectPayment('bank',this)">
+                <div class="pmeth-hd"><div class="pmeth-radio"></div><div class="pmeth-ico" style="background:var(--bg3);border:1px solid var(--border2)"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="var(--fg2)"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg></div><div><div class="pmeth-title">Bank Transfer</div><div class="pmeth-desc">ACH · Wire · SEPA — for larger or wholesale orders</div></div></div>
+              </div>
+            </div>
+            <div class="crypto-box" id="cryptoAddresses">
+              <div class="cb-title">Send payment to one of these addresses after submitting. Include your Order ID when possible.</div>
+              <div class="ca"><div class="ca-ico eth">Ξ</div><div class="ca-d"><div class="ca-l">Ethereum (ETH / ERC-20)</div><div class="ca-v" id="ethAddress">0xD06F210375B68E40Ae5B82FA7DF36871b0DF867E</div></div><button type="button" class="btn-cp" onclick="copyAddress(this,'ethAddress')">Copy</button></div>
+              <div class="ca"><div class="ca-ico usdc">$</div><div class="ca-d"><div class="ca-l">USDC (ERC-20)</div><div class="ca-v" id="usdcAddress">0xD06F210375B68E40Ae5B82FA7DF36871b0DF867E</div></div><button type="button" class="btn-cp" onclick="copyAddress(this,'usdcAddress')">Copy</button></div>
+              <div class="ca"><div class="ca-ico sol">◎</div><div class="ca-d"><div class="ca-l">Solana (SOL)</div><div class="ca-v" id="solAddress">DEHeTxWAhXhmPBMYr5orRXDMMF1vUZ8E2vjB4CHowLQM</div></div><button type="button" class="btn-cp" onclick="copyAddress(this,'solAddress')">Copy</button></div>
+              <div class="ca"><div class="ca-ico usdc">$</div><div class="ca-d"><div class="ca-l">USDC (Solana)</div><div class="ca-v" id="usdcSolAddress">DEHeTxWAhXhmPBMYr5orRXDMMF1vUZ8E2vjB4CHowLQM</div></div><button type="button" class="btn-cp" onclick="copyAddress(this,'usdcSolAddress')">Copy</button></div>
+              <div class="ca"><div class="ca-ico btc">₿</div><div class="ca-d"><div class="ca-l">Bitcoin (BTC)</div><div class="ca-v" id="btcAddress">bc1qvw9699x8js6jexr5x846jc9eea404m0rwqdt5l</div></div><button type="button" class="btn-cp" onclick="copyAddress(this,'btcAddress')">Copy</button></div>
+              <div style="margin-top:10px;font-size:.8125rem;color:var(--fg3);line-height:1.5">Need another network? Email orders@titanpeptidelab.com with your Order ID after submitting.</div>
+            </div>
+            <div class="crypto-box" id="bankDetails" style="display:none"><div class="cb-title">Bank transfer details shared after order review. We'll email wire instructions within 24 hours. Best for orders over $500.</div></div>
+            <div class="dc-wrap">
+              <label class="dc-label">Discount Code</label>
+              <div class="dc-row">
+                <input type="text" class="dc-input" id="discountInput" placeholder="e.g. WELCOME10" autocomplete="off">
+                <button type="button" class="dc-btn" onclick="applyDiscount()">Apply</button>
+              </div>
+              <div class="dc-msg" id="discountMsg"></div>
+            </div>
+            <input type="hidden" name="payment_method" id="paymentMethod" value="crypto">
+            <input type="hidden" name="order_data" id="orderData">
+            <button type="submit" class="btn-co" style="margin-top:22px" id="submitBtn">Submit Order &amp; Get Payment Instructions</button>
+          </form>
+        </div>
+        <div class="ord-sum">
+          <h3 class="serif">Order Summary</h3>
+          <div id="orderItems"></div>
+          <div class="ot"><span>Total</span><strong id="orderTotal">$0.00</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL POPUP -->
+<div class="epop-overlay" id="epopOverlay" onclick="epopClickOutside(event)">
+  <div class="epop-modal" id="epopModal">
+    <button class="epop-close" onclick="dismissEpop()" aria-label="Close">✕</button>
+    <div class="epop-eyebrow">Exclusive Offer</div>
+    <h2 class="epop-h serif">Get 10% Off Your First Order</h2>
+    <p class="epop-sub">Join 500+ researchers. Code delivered instantly.</p>
+    <div id="epopFormWrap">
+      <div class="epop-form">
+        <input type="email" class="epop-input" id="epopEmail" placeholder="your@email.com">
+        <button class="epop-btn" onclick="submitEpop()">Get My Code →</button>
+      </div>
+    </div>
+    <div class="nl-success hidden" id="epopSuccess">✓ Your code is <strong>WELCOME10</strong> — use at checkout.</div>
+    <p class="epop-fine">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-ico" id="toastIcon">✓</div>
+  <div><div class="toast-text" id="toastText"></div><div class="toast-time" id="toastTime"></div></div>
+</div>
+
+<script>
+const PRODUCTS = [
+  {name:'BPC-157',dose:'5mg',price:49,img:'mockup_bpc157.png',cat:'healing',badge:'trending',purity:99.4},
+  {name:'TB-500',dose:'5mg',price:54,img:'mockup_tb500.png',cat:'healing',badge:'',purity:99.2},
+  {name:'CJC-1295 + Ipamorelin',dose:'2mg/2mg',price:89,img:'mockup_cjcipa.png',cat:'growth',badge:'',purity:99.1},
+  {name:'Selank',dose:'5mg',price:59,img:'mockup_selank.png',cat:'cognitive',badge:'',purity:99.3},
+  {name:'Semax',dose:'5mg',price:59,img:'mockup_semax.png',cat:'cognitive',badge:'',purity:99.0},
+  {name:'Retatrutide',dose:'5mg',price:119,img:'mockup_retatrutide.png',cat:'growth',badge:'hot',purity:99.1},
+];
+
+let cart = JSON.parse(localStorage.getItem('titan_cart')||'[]');
+let discountCode = '', discountRate = 0;
+const DISCOUNTS = {WELCOME10:0.10,TITAN10:0.10,TITAN20:0.20,RESEARCH15:0.15};
+
+function renderProducts() {
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = PRODUCTS.map(p=>`
+    <div class="pc" data-cat="${p.cat}" data-reveal>
+      <div class="pc-img">
+        <div class="pc-img-bg"></div>
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        ${p.badge?`<div class="pc-badge ${p.badge}">${p.badge==='trending'?'🔥 Trending':p.badge==='hot'?'⚡ Hot':p.badge==='new'?'✦ New':p.badge}</div>`:''}
+        <div class="pc-tag">✓ Verified</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">${p.name}</div>
+        <div class="pc-dose">${p.dose} · Lyophilized</div>
+        <div class="pc-purity">
+          <div class="pc-purity-bar"><div class="pc-purity-fill" style="width:${p.purity}%"></div></div>
+          <span class="pc-purity-label">${p.purity}% Pure</span>
+        </div>
+        <div class="pc-ft">
+          <span class="pc-price">$${p.price}</span>
+          <button class="btn-add" onclick="addToCart('${p.name}','${p.dose}',${p.price},'${p.img}')">Add to Cart</button>
+        </div>
+      </div>
+    </div>`).join('');
+  document.querySelectorAll('.pc[data-reveal]').forEach(el=>io.observe(el));
+}
+
+function saveCart(){localStorage.setItem('titan_cart',JSON.stringify(cart));updateCartUI();}
+function addToCart(name,dose,price,img){const e=cart.find(i=>i.name===name);if(e){e.qty++;}else{cart.push({name,dose,price,img,qty:1});}saveCart();showToast(name+' added to cart','Just now');}
+function removeFromCart(name){cart=cart.filter(i=>i.name!==name);saveCart();}
+function changeQty(name,delta){const item=cart.find(i=>i.name===name);if(item){item.qty+=delta;if(item.qty<1)removeFromCart(name);else saveCart();}}
+
+function updateCartUI(){
+  const count=document.getElementById('cartCount');
+  const total=cart.reduce((a,b)=>a+b.qty,0);
+  count.textContent=total;count.classList.toggle('hidden',total===0);
+  const itemsEl=document.getElementById('cartItems');const ft=document.getElementById('cartFooter');const bar=document.getElementById('freeShipBar');
+  if(cart.length===0){itemsEl.innerHTML='<div class="cd-empty"><svg fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg><p>Your cart is empty</p></div>';ft.style.display='none';bar.style.display='none';return;}
+  ft.style.display='block';bar.style.display='block';
+  const subtotal=cart.reduce((a,b)=>a+b.price*b.qty,0);
+  const remaining=Math.max(0,150-subtotal);
+  bar.innerHTML=remaining>0?`<div class="fsb-text">Add <strong>$${remaining.toFixed(0)}</strong> more for free shipping</div><div class="fsb-track"><div class="fsb-fill" style="width:${Math.min(subtotal/150*100,100)}%"></div></div>`:'<div class="fsb-qual">✓ You qualify for free shipping</div>';
+  itemsEl.innerHTML=cart.map(i=>`<div class="cd-item"><div class="cd-item-img"><img src="${i.img}" alt="${i.name}"></div><div class="cd-item-info"><div class="cd-item-name">${i.name}</div><div class="cd-item-dose">${i.dose}</div><div class="cd-item-row"><div class="cd-item-qty"><button onclick="changeQty('${i.name}',-1)">−</button><span>${i.qty}</span><button onclick="changeQty('${i.name}',1)">+</button></div><div class="cd-item-price">$${(i.price*i.qty).toFixed(0)}</div></div></div></div>`).join('');
+  document.getElementById('cartSubtotal').textContent='$'+subtotal.toFixed(2);
+}
+
+function openCart(){document.getElementById('cartOverlay').classList.add('on');document.getElementById('cartDrawer').classList.add('on');updateCartUI();}
+function closeCart(){document.getElementById('cartOverlay').classList.remove('on');document.getElementById('cartDrawer').classList.remove('on');}
+function openCheckout(){closeCart();document.getElementById('checkoutBody').scrollTop=0;document.getElementById('checkoutOverlay').classList.add('on');renderOrderSummary();}
+function closeCheckout(){document.getElementById('checkoutOverlay').classList.remove('on');}
+
+function renderOrderSummary(){
+  const container=document.getElementById('orderItems');const totalEl=document.getElementById('orderTotal');
+  let subtotal=cart.reduce((a,b)=>a+b.price*b.qty,0);let discount=subtotal*discountRate;let total=subtotal-discount;
+  container.innerHTML=cart.map(i=>`<div class="ord-item"><div class="ord-item-img"><img src="${i.img}" alt="${i.name}"></div><div class="ord-item-info"><div class="ord-item-name">${i.name}</div><div class="ord-item-dose">${i.dose} × ${i.qty}</div></div><div class="ord-item-price">$${(i.price*i.qty).toFixed(0)}</div></div>`).join('')+(discount>0?`<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--green);font-size:.9375rem"><span>Discount (${discountCode})</span><span>−$${discount.toFixed(2)}</span></div>`:'');
+  totalEl.textContent='$'+total.toFixed(2);
+}
+
+function selectPayment(method,el){
+  document.getElementById('paymentMethod').value=method;
+  document.querySelectorAll('.pmeth').forEach(e=>e.classList.remove('sel'));
+  el.classList.add('sel');
+  document.getElementById('cryptoAddresses').style.display=method==='crypto'?'block':'none';
+  document.getElementById('bankDetails').style.display=method==='bank'?'block':'none';
+}
+function copyAddress(btn,id){navigator.clipboard.writeText(document.getElementById(id).textContent);const orig=btn.textContent;btn.textContent='Copied!';setTimeout(()=>btn.textContent=orig,1400);}
+function applyDiscount(){
+  const input=document.getElementById('discountInput');const msg=document.getElementById('discountMsg');const code=input.value.trim().toUpperCase();
+  if(DISCOUNTS[code]){discountCode=code;discountRate=DISCOUNTS[code];msg.textContent='✓ '+Math.round(discountRate*100)+'% discount applied';msg.className='dc-msg ok';renderOrderSummary();}
+  else{discountCode='';discountRate=0;msg.textContent='Invalid code. Try WELCOME10';msg.className='dc-msg err';renderOrderSummary();}
+}
+function updateFormForCountry(){
+  const c=document.getElementById('coCountry').value;
+  const sl=document.getElementById('coStateLabel');const zl=document.getElementById('coZipLabel');
+  if(c==='GB'){sl.innerHTML='County <span class="req">*</span>';zl.innerHTML='Postcode <span class="req">*</span>';}
+  else if(c==='CA'){sl.innerHTML='Province <span class="req">*</span>';zl.innerHTML='Postal Code <span class="req">*</span>';}
+  else{sl.innerHTML='State/Province <span class="req">*</span>';zl.innerHTML='ZIP/Postal Code <span class="req">*</span>';}
+}
+function submitOrder(e){
+  e.preventDefault();const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Processing…';
+  document.getElementById('orderData').value=JSON.stringify({cart,discount:discountCode,total:document.getElementById('orderTotal').textContent});
+  setTimeout(()=>{
+    const orderId='TPL-'+Math.random().toString(36).slice(2,10).toUpperCase();
+    document.getElementById('checkoutBody').innerHTML=`<div style="text-align:center;padding:48px 24px"><div style="width:64px;height:64px;border-radius:50%;background:var(--cyan);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto 20px;font-weight:900">✓</div><h3 class="serif" style="font-size:1.625rem;margin-bottom:8px">Order Submitted</h3><p style="color:var(--fg2);margin-bottom:6px">Order ID: <strong style="color:var(--fg);font-family:monospace">${orderId}</strong></p><p style="color:var(--fg3);font-size:.9375rem;max-width:400px;margin:16px auto;line-height:1.65">Check your email for payment instructions. Include your Order ID when sending crypto. We process within 48 hours of payment confirmation.</p><button class="btn-co" style="margin-top:24px;max-width:260px" onclick="closeCheckout();setTimeout(()=>location.reload(),200)">Done</button></div>`;
+    cart=[];saveCart();
+  },900);
+}
+
+function toggleMob(){document.getElementById('mobNav').classList.toggle('open');}
+function closeMob(){document.getElementById('mobNav').classList.remove('open');}
+function toggleFaq(btn){const item=btn.closest('.faq-item');const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
+function filterProducts(cat,btn){document.querySelectorAll('.pills .pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.pc').forEach(card=>{card.style.display=(cat==='all'||card.dataset.cat===cat)?'block':'none';});}
+function newsletterSubmit(e){e.preventDefault();document.getElementById('nlSuccess').classList.remove('hidden');document.getElementById('nlEmail').value='';}
+function showToast(text,time){const t=document.getElementById('toast');document.getElementById('toastText').textContent=text;document.getElementById('toastTime').textContent=time;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3000);}
+function epopClickOutside(e){if(e.target===document.getElementById('epopOverlay'))dismissEpop();}
+function dismissEpop(){document.getElementById('epopOverlay').classList.remove('on');sessionStorage.setItem('epop_dismissed','1');}
+function submitEpop(){const email=document.getElementById('epopEmail').value;if(!email.includes('@'))return;document.getElementById('epopFormWrap').style.display='none';document.getElementById('epopSuccess').classList.remove('hidden');sessionStorage.setItem('epop_dismissed','1');}
+
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+setTimeout(()=>{if(!sessionStorage.getItem('epop_dismissed'))document.getElementById('epopOverlay').classList.add('on');},20000);
+renderProducts();
+updateCartUI();
+</script>
 </body>
 </html>
