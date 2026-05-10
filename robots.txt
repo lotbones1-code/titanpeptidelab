@@ -1,6 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /api/
-Disallow: /checkout/success
-
-Sitemap: https://www.titanpeptidelab.com/sitemap.xml
