@@ -8,5 +8,5 @@
 :HL["/_next/static/media/b0bb26939bb40fdb-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/e6099e249fd938cc-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/eb456cc4da1afcc2.css","style"]
-:HL["/_next/static/css/6fc31e0d002a0086.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"beginners-guide-nootropic-peptides","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"Gtr5ODDj7K7soCHa4Hr3d"}
+:HL["/_next/static/css/88da34c454e95fbb.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"beginners-guide-nootropic-peptides","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"lWMeF5B21IQtFECH7Llxq"}
