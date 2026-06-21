@@ -10,4 +10,4 @@
 :HL["/_next/static/css/eb456cc4da1afcc2.css","style"]
 :HL["/_next/static/css/4d80ad57146ddfe5.css","style"]
 :HL["/titan-mark.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"semaglutide-vs-tirzepatide","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"4vgAkvvqsSyQP_dzECQke"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"semaglutide-vs-tirzepatide","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"pnBzEqyA22vIeltqfXkiw"}
