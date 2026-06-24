@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[2573,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","5700","static/chunks/app/research/selank-anxiolytic-nootropic/page-61a188989a38da19.js"],""]
-3:I[460,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","5700","static/chunks/app/research/selank-anxiolytic-nootropic/page-61a188989a38da19.js"],"CartButton"]
-4:I[5950,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","5700","static/chunks/app/research/selank-anxiolytic-nootropic/page-61a188989a38da19.js"],"MobileNav"]
+2:I[2573,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","5700","static/chunks/app/research/selank-anxiolytic-nootropic/page-61a188989a38da19.js"],""]
+3:I[460,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","5700","static/chunks/app/research/selank-anxiolytic-nootropic/page-61a188989a38da19.js"],"CartButton"]
+4:I[5950,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","5700","static/chunks/app/research/selank-anxiolytic-nootropic/page-61a188989a38da19.js"],"MobileNav"]
 44:I[5017,[],"OutletBoundary"]
 45:"$Sreact.suspense"
 :HL["/titan-mark.svg","image"]

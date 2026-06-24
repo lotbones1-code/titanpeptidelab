@@ -1,8 +1,8 @@
 1:"$Sreact.fragment"
-3:I[2573,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","4013","static/chunks/app/pay-for-peptides-with-usdc-crypto/page-ec5d8d105a2b8bf1.js"],""]
-a:I[460,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","4013","static/chunks/app/pay-for-peptides-with-usdc-crypto/page-ec5d8d105a2b8bf1.js"],"CartButton"]
-b:I[5950,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","4013","static/chunks/app/pay-for-peptides-with-usdc-crypto/page-ec5d8d105a2b8bf1.js"],"MobileNav"]
-c:I[7073,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","4013","static/chunks/app/pay-for-peptides-with-usdc-crypto/page-ec5d8d105a2b8bf1.js"],"default"]
+3:I[2573,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","4013","static/chunks/app/pay-for-peptides-with-usdc-crypto/page-ec5d8d105a2b8bf1.js"],""]
+a:I[460,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","4013","static/chunks/app/pay-for-peptides-with-usdc-crypto/page-ec5d8d105a2b8bf1.js"],"CartButton"]
+b:I[5950,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","4013","static/chunks/app/pay-for-peptides-with-usdc-crypto/page-ec5d8d105a2b8bf1.js"],"MobileNav"]
+c:I[7073,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","4013","static/chunks/app/pay-for-peptides-with-usdc-crypto/page-ec5d8d105a2b8bf1.js"],"default"]
 4a:I[5017,[],"OutletBoundary"]
 4b:"$Sreact.suspense"
 :HL["/titan-mark.svg","image"]

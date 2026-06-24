@@ -1,8 +1,8 @@
 1:"$Sreact.fragment"
-7:I[2573,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","6547","static/chunks/app/tb-500-for-sale/page-ec5d8d105a2b8bf1.js"],""]
-8:I[460,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","6547","static/chunks/app/tb-500-for-sale/page-ec5d8d105a2b8bf1.js"],"CartButton"]
-9:I[5950,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","6547","static/chunks/app/tb-500-for-sale/page-ec5d8d105a2b8bf1.js"],"MobileNav"]
-a:I[7073,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-32244eea6eaa60e1.js","6547","static/chunks/app/tb-500-for-sale/page-ec5d8d105a2b8bf1.js"],"default"]
+7:I[2573,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","6547","static/chunks/app/tb-500-for-sale/page-ec5d8d105a2b8bf1.js"],""]
+8:I[460,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","6547","static/chunks/app/tb-500-for-sale/page-ec5d8d105a2b8bf1.js"],"CartButton"]
+9:I[5950,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","6547","static/chunks/app/tb-500-for-sale/page-ec5d8d105a2b8bf1.js"],"MobileNav"]
+a:I[7073,["2573","static/chunks/2573-7457e000ae96a375.js","5695","static/chunks/5695-f497310c4d84db1c.js","8742","static/chunks/8742-b67e9dc758a61eb4.js","460","static/chunks/460-ga4fix-84295ce35.js","6547","static/chunks/app/tb-500-for-sale/page-ec5d8d105a2b8bf1.js"],"default"]
 4d:I[5017,[],"OutletBoundary"]
 4e:"$Sreact.suspense"
 :HL["/titan-mark.svg","image"]
