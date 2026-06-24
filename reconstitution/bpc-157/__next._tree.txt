@@ -10,4 +10,4 @@
 :HL["/_next/static/css/eb456cc4da1afcc2.css","style"]
 :HL["/_next/static/css/34524d8d37898bce.css","style"]
 :HL["/titan-mark.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"reconstitution","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"bpc-157","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"r41ZjrQlBTOU7h2eYG0I2"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"reconstitution","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"bpc-157","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"8H98Tk09mACtYbVeRuLOV"}
