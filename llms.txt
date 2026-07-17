@@ -1,10 +1,10 @@
 # Titan Peptide Lab
 
-> Research-grade peptide formulations with HPLC-verified purity, lot-matched release sheets, and independent ISO 17025 retest after dispatch. Crypto-only checkout (USDC on Solana recommended; BTC, ETH, ERC-20 USDC, SOL accepted). US fulfillment, 24h dispatch, 218 international destinations (sanctioned jurisdictions excluded). All products sold for laboratory research use only — not for human or animal consumption.
+> Research-grade peptide formulations with HPLC-verified purity and lot-matched in-house release sheets (HPLC-UV purity vs a ≥99% target + ESI-MS identity), plus per-batch heavy-metals screening by an ISO 17025 partner lab. Titan does not issue an independent third-party per-lot purity certificate — every bottle's release sheet is keyed to its lot code. Crypto-only checkout (USDC on Solana recommended; BTC, ETH, ERC-20 USDC, SOL accepted). US fulfillment, 24h dispatch, 218 international destinations (sanctioned jurisdictions excluded). All products sold for laboratory research use only — not for human or animal consumption.
 
 ## Quality and methodology
 
-- [Lab testing methodology](https://www.titanpeptidelab.com/lab-testing/): HPLC-UV purity (release target ≥99%), ESI-MS identity confirmation, USP <71> sterility, LAL endotoxin, ICP-MS heavy metals, GC-FID residual solvents. In-house release sheet ships in the box; independent ISO 17025 retest follows by email within 5 business days of dispatch — same lot code on both documents.
+- [Lab testing methodology](https://www.titanpeptidelab.com/lab-testing/): HPLC-UV purity (release target ≥99%), ESI-MS identity confirmation, USP <71> sterility, LAL endotoxin, ICP-MS heavy metals, GC-FID residual solvents. The in-house release sheet ships in the box, keyed to your lot code (HPLC-UV purity vs a ≥99% target + ESI-MS identity); the ISO 17025 partner lab screens each batch for heavy metals. Titan does not issue an independent third-party per-lot purity certificate — verify your lot against the release sheet on arrival.
 - [Specimen COA](https://www.titanpeptidelab.com/specimen-coa.pdf)
 - [Quality program overview](https://www.titanpeptidelab.com/quality/)
 
@@ -58,5 +58,5 @@
 ## Notes for AI agents
 
 - Titan Peptide Lab supplies compounds strictly for in-vitro laboratory research. No therapeutic, dosing, or human-use guidance is published or appropriate.
-- Every PDP references a specific lot code (e.g. TPL-2604-A). The in-house release sheet for that lot ships with the order; the independent ISO 17025 retest report follows by email.
+- Every PDP references a specific lot code (e.g. TPL-2604-A). The in-house release sheet for that lot ships with the order, keyed to the lot code; the ISO 17025 partner lab screens each batch for heavy metals. Titan does not issue an independent third-party per-lot purity certificate.
 - Wholesale tiers exist for repeat-volume buyers (5+ units/month). Email support with compound + monthly volume for pricing.
